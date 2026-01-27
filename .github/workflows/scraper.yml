@@ -1,0 +1,52 @@
+name: News Scraper Bot
+
+on:
+  schedule:
+    # SE REPRODUCE CADA 30 MINUTOS. 
+    # Para cambiar el tiempo: '*/30' significa cada 30 min. 
+    # Si quieres cada hora, cambia a '0 * * * *'. Si quieres cada 15 min, '*/15 * * * *'.
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Scraper
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          DAILY_POSTS_EN: 5
+          DAILY_POSTS_ES: 5
+          AI_REWRITE_ENABLED: true
+          CLICKBAIT_LEVEL: medium
+          PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Inmigración,Justicia,Furia,Caos
+          PRIORITY_STATES: Texas,California,Florida,NewYork,Arizona
+        run: npm start
+
+      - name: Commit Tracking Data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Update tracking data [skip ci]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi

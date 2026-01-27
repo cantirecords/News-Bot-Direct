@@ -1,0 +1,35 @@
+{
+  "name": "news-scraper-pro",
+  "version": "1.0.0",
+  "description": "Professional bilingual news scraper with AI content rewriting and Make.com integration",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "scrape": "node src/index.js",
+    "test:rewrite": "node src/test/testRewriter.js",
+    "test:translate": "node src/test/testTranslator.js",
+    "test:dedup": "node src/test/testDeduplicator.js",
+    "test:quota": "node src/test/testQuota.js",
+    "test:webhook": "node src/test/testWebhook.js"
+  },
+  "keywords": [
+    "news",
+    "scraper",
+    "rss",
+    "ai",
+    "bilingual",
+    "facebook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.0",
+    "axios": "^1.6.5",
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.4.1",
+    "groq-sdk": "^0.3.2",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0"
+  }
+}
