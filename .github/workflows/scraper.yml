@@ -5,7 +5,7 @@ on:
     # SE REPRODUCE CADA 3 HORAS. 
     # Para cambiar el tiempo: '0 */3' significa cada 3 horas. 
     # Ejemplo: '0 */1' sería cada hora. '*/30 * * * *' sería cada 30 min.
-    - cron: '0 */3 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:
