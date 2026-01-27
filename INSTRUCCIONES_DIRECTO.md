@@ -8,16 +8,16 @@ Esta es una versión simplificada del bot diseñada para publicar **directamente
     *   Crea un nuevo Webhook y obtén la URL.
     *   Pega esta URL en tu archivo `.env` o en los Secrets de GitHub de este nuevo repo como `WEBHOOK_URL`.
 
-2.  **Módulo 2: Facebook Groups/Pages (Create a Photo Post)**
-    *   **File URL**: Usa el campo `imageUrl` que viene del webhook.
-    *   **Description**: Puedes armar un caption potente usando:
+2.  **Módulo 2: Facebook Groups/Pages (Acción: Upload a Photo)**
+    *   **Photo URL**: Mapea el campo `imageUrl` que recibes del webhook. Esto hará que Facebook descargue la imagen original y la publique de forma nativa.
+    *   **Description / Message**: Usa la combinación ganadora para el texto:
         ```text
         {{category}} | {{title}}
         
         {{description}}
         
         Fuente: {{source}}
-        #Noticias #Viral
+        #Noticias #TheVitalViral
         ```
 
 ## ✨ Características de esta versión

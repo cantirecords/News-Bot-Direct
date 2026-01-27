@@ -2,10 +2,10 @@ name: News Scraper Bot
 
 on:
   schedule:
-    # SE REPRODUCE CADA 30 MINUTOS. 
-    # Para cambiar el tiempo: '*/30' significa cada 30 min. 
-    # Si quieres cada hora, cambia a '0 * * * *'. Si quieres cada 15 min, '*/15 * * * *'.
-    - cron: '*/30 * * * *'
+    # SE REPRODUCE CADA 3 HORAS. 
+    # Para cambiar el tiempo: '0 */3' significa cada 3 horas. 
+    # Ejemplo: '0 */1' sería cada hora. '*/30 * * * *' sería cada 30 min.
+    - cron: '0 */3 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:

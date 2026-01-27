@@ -78,10 +78,10 @@ export async function translateArticle(article, targetLang = 'es') {
                     
                     RULES FOR SPANISH:
                     1. TITLE: MUST be BETWEEN 8 to 10 words. 
-                    2. SHORT_DESC: MUST be BETWEEN 12 to 16 words. 
-                    3. CATEGORY: One or two AGGRESSIVE words in Spanish. BE VERY VARIED.
-                       Examples: FURIA, ULTIMATUM, VENGANZA, HEROE, IMPACTO, TRAGEDIA, MILAGRO, ESCANDALO, CORRUPCION, GUERRA, ESPERANZA, ALERTA, TENSION, LIBERTAD, JUSTICIA, MISTERIO, CAOS.
-                       Avoid repeating 'TERROR' unless necessary.
+                    2. SHORT_DESC: MUST be BETWEEN 12 to 16 words. Use 1 or 2 emojis.
+                    3. CATEGORY: One or two AGGRESSIVE words in Spanish.
+                    
+                    Tone: ABSOLUTELY EXAGGERATED, SENSATIONALIST, MOVIE-TRAILER STYLE. Use some emojis in the long description.
                     
                     Keep it factual but make it sound like a movie trailer.
                     

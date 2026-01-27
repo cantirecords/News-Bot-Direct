@@ -18,12 +18,10 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     CATEGORY: ${article.category || 'NEWS'}
     
     RULES:
-    1. TITLE: Must be BETWEEN 8 to 10 words long. NEVER exceed 10 words. NEVER less than 8. High impact Explosive Clickbait style.
-    2. SHORT_DESCRIPTION: Must be BETWEEN 12 to 16 words long. Dynamic and captivating. pure drama.
-    3. CATEGORY: One or two AGGRESSIVE words. BE VERY VARIED and specific to the story. 
-       Examples: FRENZY, ULTIMATUM, REVENGE, HERO, SHOCK, TRAGEDY, MIRACLE, SCANDAL, CORRUPTION, WAR, HOPE, ALERT, TENSION, FREEDOM, JUSTICE, MYSTERY. 
-       NEVER use the same category twice in a row if possible. Avoid using 'TERROR' unless it is strictly appropriate.
-    4. LONG_DESCRIPTION: 2 short, highly dramatic paragraphs for the Facebook post caption. Use intense vocabulary. No emojis.
+    1. TITLE: Must be BETWEEN 8 to 10 words long. NEVER exceed 10 words. High impact Explosive Clickbait style.
+    2. SHORT_DESCRIPTION: Must be BETWEEN 12 to 16 words long. Use 1 or 2 impactful emojis. Pure drama.
+    3. CATEGORY: One or two AGGRESSIVE words. (e.g., FRENZY, ULTIMATUM, REVENGE, HERO, SHOCK). 
+    4. LONG_DESCRIPTION: 2 short paragraphs. TONE: ABSOLUTELY EXAGGERATED, SENSATIONALIST, MOVIE-TRAILER STYLE. Use 1-2 emojis.
     5. Maintain the core facts. Do not invent details.
     6. English output only.
     
