@@ -2,10 +2,10 @@ name: News Scraper Bot
 
 on:
   schedule:
-    # SE REPRODUCE CADA 3 HORAS. 
-    # Para cambiar el tiempo: '0 */3' significa cada 3 horas. 
-    # Ejemplo: '0 */1' sería cada hora. '*/30 * * * *' sería cada 30 min.
-    - cron: '0 */1 * * *'
+    # SE REPRODUCE CADA 30 MINUTOS. 
+    # Para cambiar el tiempo: '*/30' significa cada 30 min. 
+    # Si quieres cada hora, cambia a '0 * * * *'. Si quieres cada 15 min, '*/15 * * * *'.
+    - cron: '*/30 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
           DAILY_POSTS_EN: 5
           DAILY_POSTS_ES: 5
           AI_REWRITE_ENABLED: true
-          CLICKBAIT_LEVEL: high
+          CLICKBAIT_LEVEL: medium
           PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Inmigración,Justicia,Furia,Caos
           PRIORITY_STATES: Texas,California,Florida,NewYork,Arizona
         run: npm start
