@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import axios from 'axios';
 import { fetchNews } from './scraper.js';
 import { getNextLanguage, incrementPostCount } from './languageQuota.js';
 import { selectBestArticle, saveLastSource } from './selector.js';
@@ -75,13 +76,28 @@ async function main() {
     finalArticle.cloudinaryCategory = clsafe(finalArticle.category);
     finalArticle.cloudinarySource = clsafe(finalArticle.source);
 
-    // We also need the image URL encoded for the 'fetch' part
-    // Using Base64 is the only 100% reliable way to avoid Cloudinary processing errors
-    finalArticle.rawImageUrl = finalArticle.imageUrl;
-    finalArticle.b64ImageUrl = Buffer.from(finalArticle.imageUrl).toString('base64')
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=/g, '');
+    // 7. Download image and convert to Base64 (True Image Data)
+    try {
+        console.log('[Main] Downloading image for Base64 conversion...');
+        const imageResponse = await axios.get(finalArticle.imageUrl, {
+            responseType: 'arraybuffer',
+            timeout: 5000,
+            headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
+
+        finalArticle.rawImageUrl = finalArticle.imageUrl;
+        finalArticle.b64ImageUrl = Buffer.from(imageResponse.data, 'binary').toString('base64')
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_')
+            .replace(/=/g, '');
+
+        console.log('[Main] Image converted to Base64 successfully.');
+    } catch (imgError) {
+        console.error('[Main] Failed to download image for Base64:', imgError.message);
+        // Fallback: Use the URL as is, but warn
+        finalArticle.rawImageUrl = finalArticle.imageUrl;
+        finalArticle.b64ImageUrl = ''; // Send empty if failed
+    }
 
     // 7. Send to Make.com
     const success = await sendToWebhook(finalArticle);
