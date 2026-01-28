@@ -34,7 +34,7 @@ jobs:
           DAILY_POSTS_EN: 5
           DAILY_POSTS_ES: 5
           AI_REWRITE_ENABLED: true
-          CLICKBAIT_LEVEL: medium
+          CLICKBAIT_LEVEL: high
           PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Inmigración,Justicia,Furia,Caos
           PRIORITY_STATES: Texas,California,Florida,NewYork,Arizona
         run: npm start
