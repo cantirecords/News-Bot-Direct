@@ -54,11 +54,10 @@ export async function selectBestArticle(articles, targetLanguage) {
     for (const art of articles) {
         const now = new Date();
         const pubDate = new Date(art.pubDate);
-        // Strictly 3 hours (10,800,000 ms) 
-        if ((now - pubDate) > 10800000) {
-            // Silently skip very old ones
-            continue;
-        }
+        const ageMs = now - pubDate;
+
+        // Extended Window: 12 hours (43,200,000 ms)
+        if (ageMs > 43200000) continue;
 
         const isKnown = !(await isNew(art));
         if (isKnown) {
@@ -68,6 +67,14 @@ export async function selectBestArticle(articles, targetLanguage) {
 
         const detection = detectCategory(art);
         let finalScore = calculateScore(art.title, art.source);
+
+        // --- Recency Bonus (Prioritizing the "Just Happened") ---
+        let recencyBonus = 0;
+        if (ageMs < 3600000) recencyBonus = 150;      // < 1 hour: Massive boost
+        else if (ageMs < 10800000) recencyBonus = 80; // 1-3 hours: Strong boost
+        else if (ageMs < 21600000) recencyBonus = 40; // 3-6 hours: Small boost
+
+        finalScore += recencyBonus;
 
         // --- Multi-Source Trend Detection ---
         let matchCount = 0;
@@ -83,12 +90,11 @@ export async function selectBestArticle(articles, targetLanguage) {
         let isTrending = false;
         if (matchCount > 0) {
             isTrending = true;
-            finalScore += 200; // HUGE boost for trending news
-            console.log(`[Selector] Hot Trend Detected! (${matchCount} other sources): ${art.title.slice(0, 40)}`);
+            finalScore += 200;
+            console.log(`[Selector] Hot Trend Detected! (${matchCount} sources): ${art.title.slice(0, 40)}`);
         }
-        // ------------------------------------
 
-        // Favor target language but allow general pool
+        // Favor target language
         if (art.originalLanguage === targetLanguage) finalScore += 20;
 
         // Penalty for repeating same source
