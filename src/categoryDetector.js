@@ -39,10 +39,30 @@ export function detectCategory(article) {
     for (const state of states) {
         if (text.includes(state)) {
             score += 50;
-            // Elevate state to category if it's still generic
             if (detected === 'BREAKING NEWS' || detected === 'GENERAL') {
                 detected = state.toUpperCase();
             }
+        }
+    }
+
+    // City & Hotspot detection (Ultra-Local)
+    const hotspots = {
+        'eagle pass': 'EAGLE PASS, TX',
+        'el paso': 'EL PASO, TX',
+        'miami': 'MIAMI, FL',
+        'chicago': 'CHICAGO, IL',
+        'new york city': 'NEW YORK CITY',
+        'nyc': 'NEW YORK CITY',
+        'brownsville': 'BROWNSVILLE, TX',
+        'mcallen': 'MCALLEN, TX',
+        'del rio': 'DEL RIO, TX'
+    };
+
+    for (const [kw, name] of Object.entries(hotspots)) {
+        if (text.includes(kw)) {
+            detected = name;
+            score += 80;
+            break; // City is the most specific, so we stop here
         }
     }
 

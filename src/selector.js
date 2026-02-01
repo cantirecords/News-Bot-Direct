@@ -29,6 +29,15 @@ function calculateScore(text, source) {
     if (lowerText.includes('ice') || lowerText.includes('immigration') || lowerText.includes('deportation')) score += 100;
     if (lowerText.includes('border') || lowerText.includes('frontera')) score += 80;
 
+    // Power Verbs (Action-Oriented Headlines)
+    const powerVerbs = ['seized', 'deported', 'arrested', 'signed', 'banned', 'emergency', 'raided', 'raids', 'order', 'confirmed'];
+    for (const verb of powerVerbs) {
+        if (lowerText.includes(verb)) {
+            score += 100;
+            break;
+        }
+    }
+
     // High Impact Keywords
     if (lowerText.includes('breaking')) score += 50;
     if (lowerText.includes('live updates')) score += 40;
