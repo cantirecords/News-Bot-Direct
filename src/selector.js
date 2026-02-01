@@ -66,18 +66,41 @@ export async function selectBestArticle(articles, targetLanguage) {
             continue;
         }
 
-        if (true) { // replaces await isNew(art) since we handled it above
-            const detection = detectCategory(art);
-            let finalScore = calculateScore(art.title, art.source);
+        const detection = detectCategory(art);
+        let finalScore = calculateScore(art.title, art.source);
 
-            // Favor target language but allow general pool
-            if (art.originalLanguage === targetLanguage) finalScore += 20;
+        // --- Multi-Source Trend Detection ---
+        let matchCount = 0;
+        const artWords = art.title.toLowerCase().split(' ').filter(w => w.length > 4);
 
-            // Penalty for repeating same source
-            if (art.source === lastSource) finalScore -= 40;
-
-            candidates.push({ ...art, category: detection.category, score: finalScore });
+        for (const other of articles) {
+            if (other.source === art.source) continue;
+            const otherWords = other.title.toLowerCase();
+            const overlap = artWords.filter(w => otherWords.includes(w));
+            if (overlap.length >= 3) matchCount++;
         }
+
+        let isTrending = false;
+        if (matchCount > 0) {
+            isTrending = true;
+            finalScore += 200; // HUGE boost for trending news
+            console.log(`[Selector] Hot Trend Detected! (${matchCount} other sources): ${art.title.slice(0, 40)}`);
+        }
+        // ------------------------------------
+
+        // Favor target language but allow general pool
+        if (art.originalLanguage === targetLanguage) finalScore += 20;
+
+        // Penalty for repeating same source
+        if (art.source === lastSource) finalScore -= 40;
+
+        candidates.push({
+            ...art,
+            category: detection.category,
+            categoryColor: detection.color,
+            isTrending: isTrending,
+            score: finalScore
+        });
     }
 
     if (candidates.length === 0) return null;

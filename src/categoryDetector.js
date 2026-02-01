@@ -70,8 +70,25 @@ export function detectCategory(article) {
         }
     }
 
+    // Color Mapping (Fail-safe)
+    const colorMapping = {
+        'TRUMP': '#D4AF37',       // Gold
+        'ICE': '#CC0000',         // Deep Red
+        'EMERGENCY': '#FF0000',   // Bright Red
+        'SHOWDOWN': '#FF4500',    // OrangeRed
+        'CLASH': '#FF4500',
+        'BATTLE': '#FF4500',
+        'BORDER': '#FF8C00',      // Dark Orange
+        'LEGAL': '#000080',       // Navy Blue
+        'IMMIGRATION': '#2F4F4F', // Dark Slate
+        'BREAKING NEWS': '#000000' // Black
+    };
+
+    const finalColor = colorMapping[detected] || '#333333'; // Default to Dark Gray
+
     return {
         category: detected,
-        score: score
+        score: score,
+        color: finalColor
     };
 }

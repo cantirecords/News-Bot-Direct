@@ -77,6 +77,10 @@ async function main() {
     finalArticle.cloudinaryCategory = clsafe(finalArticle.category);
     finalArticle.cloudinarySource = clsafe(finalArticle.source);
 
+    // Add dynamic colors and trend flags
+    finalArticle.categoryColor = best.categoryColor || '#333333';
+    finalArticle.isTrending = best.isTrending || false;
+
     // 7. Download image and convert to Base64 (True Image Data)
     try {
         console.log('[Main] Downloading image for Base64 conversion...');
