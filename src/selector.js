@@ -24,12 +24,16 @@ function calculateScore(text, source) {
     let score = 50; // Base score
     const lowerText = text.toLowerCase();
 
-    // Palabras de Alto Impacto (Puntaje Masivo)
+    // Priority Topics (Massive Boost)
+    if (lowerText.includes('trump')) score += 100;
+    if (lowerText.includes('ice') || lowerText.includes('immigration') || lowerText.includes('deportation')) score += 100;
+    if (lowerText.includes('border') || lowerText.includes('frontera')) score += 80;
+
+    // High Impact Keywords
     if (lowerText.includes('breaking')) score += 50;
     if (lowerText.includes('live updates')) score += 40;
-    if (lowerText.includes('dead') || lowerText.includes('killed')) score += 30;
-    if (lowerText.includes('shooting') || lowerText.includes('massacre') || lowerText.includes('crash')) score += 30;
-    if (lowerText.includes('war') || lowerText.includes('attack')) score += 20;
+    if (lowerText.includes('shoot') || lowerText.includes('kill') || lowerText.includes('dead')) score += 40;
+    if (lowerText.includes('war') || lowerText.includes('attack')) score += 30;
 
     return score;
 }
@@ -41,7 +45,8 @@ export async function selectBestArticle(articles, targetLanguage) {
     for (const art of articles) {
         const now = new Date();
         const pubDate = new Date(art.pubDate);
-        if ((now - pubDate) / (1000 * 60 * 60) > 24) continue;
+        // Strictly 1 hour (3600000 ms)
+        if ((now - pubDate) > 3600000) continue;
 
         if (await isNew(art)) {
             const detection = detectCategory(art);

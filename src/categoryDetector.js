@@ -13,30 +13,36 @@ export function detectCategory(article) {
     // Keyword mapping to clean categories
     const mapping = {
         'immigration': 'IMMIGRATION',
-        'inmigración': 'INMIGRACIÓN',
         'ice': 'ICE',
         'trump': 'TRUMP',
-        'biden': 'POLITICS',
-        'breaking': 'BREAKING NEWS',
-        'última hora': 'ÚLTIMA HORA',
+        'deportation': 'DEPORTATION',
         'border': 'BORDER',
-        'frontera': 'FRONTERA'
+        'breaking': 'BREAKING NEWS',
+        'white house': 'POLITICS',
+        'court': 'LEGAL'
     };
 
     for (const [kw, cat] of Object.entries(mapping)) {
         if (text.includes(kw)) {
             detected = cat;
-            score += 50;
+            score += 70; // High priority for these topics
             break;
         }
     }
 
-    // State detection
-    for (const state of PRIORITY_STATES) {
+    // State detection boosting
+    const states = [
+        'texas', 'florida', 'california', 'new york', 'arizona', 'georgia', 'pennsylvania',
+        'ohio', 'michigan', 'illinois', 'louisiana', 'alabama', 'kentucky', 'tennessee'
+    ];
+
+    for (const state of states) {
         if (text.includes(state)) {
-            score += 30;
-            // If we don't have a specific category yet, use the state
-            if (detected === 'GENERAL') detected = state.toUpperCase();
+            score += 50;
+            // Elevate state to category if it's still generic
+            if (detected === 'BREAKING NEWS' || detected === 'GENERAL') {
+                detected = state.toUpperCase();
+            }
         }
     }
 

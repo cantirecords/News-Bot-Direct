@@ -1,41 +1,36 @@
 import dotenv from 'dotenv';
-import { fetchNews } from './src/scraper.js';
 import { rewriteArticle } from './src/aiRewriter.js';
 import { sendToWebhook } from './src/webhook.js';
+import axios from 'axios';
 
 dotenv.config();
 
-async function forceEnglishTest() {
-    console.log('--- FORCED ENGLISH SIGNAL TEST ---');
-    const targetLang = 'en';
+async function sendIceSignalFinal() {
+    console.log('--- FINAL ICE NEWS SIGNAL ATTEMPT ---');
 
-    // 2. Fetch articles from all sources
-    const articles = await fetchNews();
+    // Real news story from the search results
+    const iceNews = {
+        title: 'ICE Lodges Detainer After Brutal Rape Case in Kentucky Involving Egyptian National',
+        description: 'Federal immigration agents have lodged a detainer against an Egyptian national apprehended in Louisville, Kentucky, in connection with the alleged rape of a 16-year-old girl. The move comes as scrutiny intensifies over federal immigration enforcement and public safety.',
+        url: 'https://www.dhs.gov/news/2026/01/30/ice-lodges-detainer-louisville-arrest',
+        pubDate: new Date().toISOString(),
+        source: 'DHS News',
+        sourceType: 'US',
+        originalLanguage: 'en',
+        // Using a high-quality guaranteed image for the test
+        imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200'
+    };
 
-    // 3. Selection (Find first with image)
-    let best = null;
-    for (const art of articles) {
-        if (art.imageUrl) {
-            best = art;
-            break;
-        }
-        console.log(`[Main] Skipping "${art.title.slice(0, 30)}..." (No image)`);
-    }
+    console.log(`[Main] Processing: "${iceNews.title}"`);
 
-    if (!best) {
-        console.log('[Main] No articles with images found in the feed.');
-        return;
-    }
-    console.log(`[Main] Selected: "${best.title}" from ${best.source}`);
-
-    // 4. AI Rewrite
+    // 1. AI Rewrite
     console.log('[Main] Rewriting article with AI...');
-    const rewritten = await rewriteArticle(best, process.env.CLICKBAIT_LEVEL);
+    const rewritten = await rewriteArticle(iceNews, 'high');
 
     let finalArticle = rewritten;
     finalArticle.language = 'en';
 
-    // 6. Pre-process for Cloudinary
+    // 2. Pre-process for Cloudinary
     const clsafe = (text) => {
         if (!text) return '';
         return text.replace(/%/g, '%25').replace(/,/g, '%2C').replace(/\./g, '%2E').replace(/&/g, '%26');
@@ -43,13 +38,12 @@ async function forceEnglishTest() {
 
     finalArticle.cloudinaryTitle = clsafe(finalArticle.title);
     finalArticle.cloudinaryShortDesc = clsafe(finalArticle.shortDescription);
-    finalArticle.cloudinaryCategory = clsafe(finalArticle.category);
+    finalArticle.cloudinaryCategory = 'CRIME';
     finalArticle.cloudinarySource = clsafe(finalArticle.source);
 
-    // 7. Image to Base64
+    // 3. Image to Base64 (Crucial for the signal to "go through" visually)
     try {
         console.log('[Main] Downloading image for Base64 conversion...');
-        const axios = (await import('axios')).default;
         const imageResponse = await axios.get(finalArticle.imageUrl, {
             responseType: 'arraybuffer',
             timeout: 5000,
@@ -69,15 +63,15 @@ async function forceEnglishTest() {
         finalArticle.b64ImageUrl = '';
     }
 
-    // 8. Send to Make.com
-    console.log('[Webhook] Sending forced English article to Make.com...');
+    // 4. Send to Make.com
+    console.log('[Webhook] Sending ICE news to Make.com...');
     const success = await sendToWebhook(finalArticle);
 
     if (success) {
-        console.log('[Main] Success! Forced English signal sent.');
+        console.log('✅ Success! ICE signal sent to Webhook.');
     } else {
-        console.log('[Main] Failed to send.');
+        console.log('❌ Failed to send to Webhook.');
     }
 }
 
-forceEnglishTest();
+sendIceSignalFinal();

@@ -2,10 +2,8 @@ name: News Scraper Bot
 
 on:
   schedule:
-    # SE REPRODUCE CADA 30 MINUTOS. 
-    # Para cambiar el tiempo: '*/30' significa cada 30 min. 
-    # Si quieres cada hora, cambia a '0 * * * *'. Si quieres cada 15 min, '*/15 * * * *'.
-    - cron: '*/30 * * * *'
+    # Runs every hour
+    - cron: '0 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:
@@ -35,8 +33,8 @@ jobs:
           DAILY_POSTS_ES: 5
           AI_REWRITE_ENABLED: true
           CLICKBAIT_LEVEL: medium
-          PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Inmigración,Justicia,Furia,Caos
-          PRIORITY_STATES: Texas,California,Florida,NewYork,Arizona
+          PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Deportation,Politics,Legal
+          PRIORITY_STATES: Texas,Florida,NewYork,California,Arizona,Georgia,Pennsylvania,Ohio,Michigan
         run: npm start
 
       - name: Commit Tracking Data

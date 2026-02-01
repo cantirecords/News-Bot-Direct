@@ -86,7 +86,7 @@ async function main() {
         });
 
         finalArticle.rawImageUrl = finalArticle.imageUrl;
-        finalArticle.b64ImageUrl = Buffer.from(imageResponse.data, 'binary').toString('base64')
+        finalArticle.b64ImageUrl = Buffer.from(imageResponse.data).toString('base64')
             .replace(/\+/g, '-')
             .replace(/\//g, '_')
             .replace(/=/g, '');

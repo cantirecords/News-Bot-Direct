@@ -1,7 +1,9 @@
 import { translate } from '@vitalets/google-translate-api';
 import fs from 'fs/promises';
 import path from 'path';
+import Groq from 'groq-sdk';
 
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 const CACHE_FILE = path.resolve(process.cwd(), 'data/translation_cache.json');
 
 async function loadCache() {
@@ -69,8 +71,6 @@ export async function translateArticle(article, targetLang = 'es') {
             for (const model of models) {
                 try {
                     console.log(`[Translator] Attempting AI translation with model: ${model}`);
-                    const Groq = (await import('groq-sdk')).default;
-                    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
                     const prompt = `
                     Translate and REWRITE the following news article parts to Spanish. 

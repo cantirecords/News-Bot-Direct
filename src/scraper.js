@@ -25,7 +25,8 @@ export async function getHighQualityImage(url) {
     const $ = cheerio.load(data);
     const ogImage = $('meta[property="og:image"]').attr('content') ||
       $('meta[name="twitter:image"]').attr('content') ||
-      $('link[rel="image_src"]').attr('href');
+      $('link[rel="image_src"]').attr('href') ||
+      $('article img').first().attr('src');
 
     if (ogImage && ogImage.startsWith('/')) {
       const urlObj = new URL(url);

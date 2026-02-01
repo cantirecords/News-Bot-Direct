@@ -38,15 +38,8 @@ export async function incrementPostCount(language) {
 export async function getNextLanguage() {
     const data = await getQuotaData();
     const limit_en = parseInt(process.env.DAILY_POSTS_EN || '5');
-    const limit_es = parseInt(process.env.DAILY_POSTS_ES || '5');
 
-    // Priority logic for 50/50 balance
-    // 1. If Spanish has fewer posts than English, go Spanish
-    if (data.posts_es < data.posts_en && data.posts_es < limit_es) return 'es';
-    // 2. If English has fewer posts, go English
-    if (data.posts_en < data.posts_es && data.posts_en < limit_en) return 'en';
-    // 3. If they are equal, pick Spanish first this time to please the user
-    if (data.posts_es < limit_es) return 'es';
+    // Forced English mode per user request
     if (data.posts_en < limit_en) return 'en';
 
     return null; // All quotas full

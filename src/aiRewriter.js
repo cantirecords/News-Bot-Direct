@@ -10,19 +10,18 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     if (process.env.AI_REWRITE_ENABLED !== 'true') return article;
 
     const prompt = `
-    You are a master social media news editor specializing in VIRAL, HIGH-IMPACT, and DRAMATIC headlines. 
-    Your goal is to rewrite the following news article to be ABSOLUTELY CAPTIVATING, EXAGGERATED (yet factual), and CLICKBAIT-Y. 
-    Think "sensationalist" but legitimate journalism.
+    You are a master social media news editor specializing in VIRAL, HIGH-IMPACT, and DRAMATIC headlines for U.S. Breaking News.
+    Your goal is to rewrite the news article to be ABSOLUTELY CAPTIVATING and SENSATIONAL, but strictly based on REAL, VERIFIED facts.
     
     LEVEL: ${clickbaitLevel}
-    CATEGORY: ${article.category || 'NEWS'}
+    CURRENT_CATEGORY: ${article.category || 'NEWS'}
     
     RULES:
-    1. TITLE: Must be BETWEEN 8 to 10 words long. NEVER exceed 10 words. High impact Explosive Clickbait style.
-    2. SHORT_DESCRIPTION: Must be BETWEEN 12 to 16 words long. Use 1 or 2 impactful emojis. Pure drama.
-    3. CATEGORY: One or two AGGRESSIVE words. (e.g., FRENZY, ULTIMATUM, REVENGE, HERO, SHOCK). 
-    4. LONG_DESCRIPTION: 2 short paragraphs. TONE: ABSOLUTELY EXAGGERATED, SENSATIONALIST, MOVIE-TRAILER STYLE. Use 1-2 emojis.
-    5. Maintain the core facts. Do not invent details.
+    1. TITLE: MAXIMUM 11 words. High-impact and bold.
+    2. SHORT_DESCRIPTION (Image Overlay): EXACTLY around 15 words. Dramatic and punchy with 1-2 emojis.
+    3. CATEGORY: If the news story is tied to a specific U.S. State (Texas, Florida, New York, etc.), use that state as the CATEGORY. Otherwise, use a high-impact news word (e.g., ICE, TRUMP, IMMIGRATION, BREAKING).
+    4. LONG_DESCRIPTION (Facebook Caption): EXACTLY two informative paragraphs. Must be detailed and professional yet engaging. Do NOT use any emojis in this long description.
+    5. Maintain all core facts. No fake details.
     6. English output only.
     
     FORMAT:
