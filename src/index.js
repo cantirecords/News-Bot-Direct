@@ -57,7 +57,7 @@ async function main() {
         if (finalArticle.category === 'ÚLTIMA HORA') finalArticle.category = 'BREAKING NEWS';
     }
 
-    // 5. Dynamic Title Prefix (The "Elite Agency" Layout)
+    // 5. Dynamic Title Prefix (Minimalist Clean Layout)
     const ageMs = new Date() - new Date(best.pubDate);
     let timeLabel = '';
     if (best.isTrending) timeLabel = 'CONFIRMED';
@@ -65,15 +65,8 @@ async function main() {
     else if (ageMs < 3600000) timeLabel = 'JUST IN';
     else timeLabel = 'STORY UPDATE';
 
-    const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL'];
-    const isSpecialLocation = !generalTopics.includes(finalArticle.category);
-
-    const badgeIcon = best.isTrending ? '🔥' : '🚨';
-    const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
-    const separator = isSpecialLocation ? ' | ' : ' | '; // Consistent separator
-
-    // Final Title: 🔥 TOP TRENDING 📍 TEXAS | Title Text OR 🔥 TOP TRENDING | IMMIGRATION | Title Text
-    finalArticle.title = `${badgeIcon} ${timeLabel} ${isSpecialLocation ? '' : '| '}${locationPart} | ${finalArticle.title}`;
+    // Title: CONFIRMED | TEXAS | Title Text
+    finalArticle.title = `${timeLabel} | ${finalArticle.category} | ${finalArticle.title}`;
 
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {

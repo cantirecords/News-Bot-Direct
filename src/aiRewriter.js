@@ -15,7 +15,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. POLITICS AND NEWS outlet. 
-    Your goal is to make every story IRRESISTIBLE and maximize reach through "Vertical Impact Bullets," "Curiosity Gaps," and the "Power Scoreboard."
+    Your goal is to make every story IRRESISTIBLE with a clean, professional, and minimalist aesthetic.
     
     FOCUS: Strictly U.S. News, Politics, ICE, and Border.
     
@@ -26,23 +26,24 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - START WITH "QUICK IMPACT" SECTION: 3 vertical bullet points.
-         Format:
-         QUICK IMPACT
-         📂 [Fact 1]
-         📂 [Fact 2]
-         ⚠️ [Impact 3]
+       - STEP 1 (NARRATIVE): 
+         Paragraph 1 (The Stakes)
+         [SINGLE LINE BREAK]
+         Paragraph 2 (The Conflict)
        - [DOUBLE LINE BREAK]
-       - PARAGRAPH 1 (THE STAKES): Why this matters to the reader.
-       - [SINGLE LINE BREAK]
-       - PARAGRAPH 2 (THE CONFLICT): The facts and the political divide.
+       - STEP 2 (QUICK IMPACT): 
+         Vertical list starts with "QUICK IMPACT"
+         • [Fact 1]
+         • [Fact 2]
+         • [Impact 3]
        - [DOUBLE LINE BREAK]
-       - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
+       - STEP 3 (REACTION): 
+         The Binary Reaction Trigger (YES or NO vote).
        - [DOUBLE LINE BREAK]
-       - POWER SCOREBOARD:
+       - STEP 4 (POWER SCOREBOARD):
          🏆 WINNER: [Subject]
          ❌ LOSER: [Subject]
-       - NO EMOJIS: Use ONLY 📂, 🔹, ⚠️, 🏆, ❌. ABSOLUTELY DO NOT USE THE MAP PIN ICON (📍) in the description.
+       - NO EMOJIS: Only use 🏆 and ❌ for the scoreboard. Use simple dots (•) for the Quick Impact bullets.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags.
     5. Maintain core facts. English output only.
     
@@ -50,7 +51,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     Return only a valid JSON object with: 
     "title": "string", 
     "shortDescription": "string", 
-    "longDescription": "string (Vertical list, single/double space as instructed)",
+    "longDescription": "string",
     "hashtags": ["list", "of", "5", "hashtags"],
     "category": "string"
     
