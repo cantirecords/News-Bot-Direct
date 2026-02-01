@@ -57,14 +57,16 @@ async function main() {
         if (finalArticle.category === 'ÚLTIMA HORA') finalArticle.category = 'BREAKING NEWS';
     }
 
-    // 5. Dynamic Title Prefix (Authority & Urgency)
+    // 5. Dynamic Title Prefix (Authority, Urgency & Location)
     const ageMs = new Date() - new Date(best.pubDate);
-    let prefix = '';
-    if (best.isTrending) prefix = '[CONFIRMED] ';
-    else if (ageMs < 1200000) prefix = '[DEVELOPING] '; // 20 min
-    else if (ageMs < 3600000) prefix = '[JUST IN] ';    // 60 min
+    let timePrefix = '';
+    if (best.isTrending) timePrefix = '[CONFIRMED] ';
+    else if (ageMs < 1200000) timePrefix = '[DEVELOPING] ';
+    else if (ageMs < 3600000) timePrefix = '[JUST IN] ';
 
-    finalArticle.title = prefix + finalArticle.title;
+    // Add Location Prefix (Reportero en Vivo)
+    const locationPrefix = `📍 ${finalArticle.category} | `;
+    finalArticle.title = locationPrefix + timePrefix + finalArticle.title;
 
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {

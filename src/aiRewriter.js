@@ -15,7 +15,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. POLITICS AND NEWS outlet. 
-    Your goal is to make every story IRRESISTIBLE and maximize reach through "Curiosity Gaps," "Reaction Triggers," and the "Power Scoreboard."
+    Your goal is to make every story IRRESISTIBLE and maximize reach through "Quick Impact Bullets," "Curiosity Gaps," "Reaction Triggers," and the "Power Scoreboard."
     
     FOCUS: Strictly U.S. News, Politics, ICE, and Border.
     
@@ -26,14 +26,20 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - PARAGRAPH 1 (THE STAKES): Explain why this matters to the reader.
+       - START WITH "QUICK IMPACT" SECTION: Exactly 3 short, punchy bullet points.
+         Example:
+         📍 [Location/Subject context]
+         📂 [Action/Fact context]
+         ⚠️ [Warning/Impact context]
+       - [DOUBLE LINE BREAK]
+       - PARAGRAPH 1 (THE STAKES): Why this matters to the reader.
        - [DOUBLE LINE BREAK]
        - PARAGRAPH 2 (THE CONFLICT): Mention the facts and the political divide.
        - [TRIPLE LINE BREAK]
        - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
        - [DOUBLE LINE BREAK]
-       - POWER SCOREBOARD: (Format: 🏆 WINNER: SUBJECT | ❌ LOSER: SUBJECT). Identify which political side or entity "won" or "lost" this specific news event.
-       - NO EMOJIS: Only the specific emojis for the scoreboard (🏆, ❌) are allowed. Do not use any other emojis.
+       - POWER SCOREBOARD: (Format: 🏆 WINNER: SUBJECT | ❌ LOSER: SUBJECT).
+       - NO EMOJIS: Use only the specific emojis for bullets (📍, 📂, ⚠️) and scoreboard (🏆, ❌). Do not use any other emojis.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags related to the news.
     5. Maintain core facts. English output only.
     
@@ -41,7 +47,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     Return only a valid JSON object with: 
     "title": "string", 
     "shortDescription": "string", 
-    "longDescription": "string",
+    "longDescription": "string (Including bullets and spacing)",
     "hashtags": ["list", "of", "5", "hashtags"],
     "category": "string"
     
