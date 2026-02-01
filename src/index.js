@@ -13,12 +13,14 @@ dotenv.config();
 async function main() {
     console.log('--- News Scraper Pro Started ---', new Date().toLocaleString());
 
-    // 1. Check if we should post (quota check)
+    /* Quota Check Disabled: Posting every hour
     const targetLang = await getNextLanguage();
     if (!targetLang) {
         console.log('[Main] Daily quotas are full. Sleeping...');
         return;
     }
+    */
+    const targetLang = 'en'; // Forced EN for now
     console.log(`[Main] Target language for this run: ${targetLang.toUpperCase()}`);
 
     // 2. Fetch articles from all sources

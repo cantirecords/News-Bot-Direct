@@ -24,14 +24,15 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image): EXACTLY around 15 words. Dramatic cliffhanger.
     3. LONG_DESCRIPTION (Facebook Caption): 
+       - MUST BE A SINGLE STRING containing two paragraphs.
        - PARAGRAPH 1 (THE STAKES): Start by explaining why this matters to the reader's wallet, safety, or daily life. Use "What's at stake" framing.
-       - PARAGRAPH 2 (THE CONFLICT): Report the core facts and the political divide it creates. Highlight the friction between sides.
-       - FINAL QUESTION: A sharp, dual-perspective question to trigger comments from both sides.
+       - PARAGRAPH 2 (THE CONFLICT): Report the core facts and the political divide it creates. Include the FINAL QUESTION at the very end of this paragraph.
        - NO EMOJIS: Do NOT use any emojis.
     4. Maintain core facts. English output only.
     
     FORMAT:
-    Return only a valid JSON object with: "title", "shortDescription", "longDescription", "category".
+    Return only a valid JSON object with: "title" (string), "shortDescription" (string), "longDescription" (string), "category" (string).
+    Wait! DO NOT use nested objects for paragraphs. "longDescription" MUST be one long string.
     
     ARTICLE TO REWRITE:
     Title: ${article.title}
