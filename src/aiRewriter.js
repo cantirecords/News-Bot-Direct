@@ -30,15 +30,15 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
        - STORY SECTION: 
          Exactly 2 High-impact paragraphs about the news.
          (Separated by 1 newline).
-       - [DOUBLE LINE BREAK]
+       - [SINGLE LINE BREAK]
        - QUICK IMPACT:
          ⚡ [Fact 1]
          ⚡ [Fact 2]
          🔸 [Impact 3]
-       - [DOUBLE LINE BREAK]
+       - [SINGLE LINE BREAK]
        - VOTE SECTION:
          🗳️ VOTE: [The Question] (Type YES or NO below!)
-       - [DOUBLE LINE BREAK]
+       - [SINGLE LINE BREAK]
        - POWER SCOREBOARD:
          🏆 WINNER: [Subject]
          ❌ LOSER: [Subject]

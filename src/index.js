@@ -107,12 +107,12 @@ async function main() {
     let finalDescription = finalArticle.description;
 
     // Add Read More Link
-    finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
+    finalDescription += `\n🔗 Read more: ${finalArticle.source}`;
 
     // Add All Hashtags at the Absolute Bottom
     if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
         const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
-        finalDescription += `\n\n${hashFormatted} #TheVitalViral #News`;
+        finalDescription += `\n${hashFormatted} #TheVitalViral #News`;
     }
 
     finalArticle.description = finalDescription;
