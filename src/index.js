@@ -28,7 +28,8 @@ async function main() {
     // 3. Select the best one
     const best = await selectBestArticle(articles, targetLang);
     if (!best) {
-        console.log('[Main] No new articles with images found. Try again later.');
+        console.log('[Main] No new articles found in the last 3 hours that haven\'t been posted yet.');
+        console.log('[Main] Tip: If you want to force a post, you can delete data/seen_articles.json, but the bot is working correctly by avoiding duplicates.');
         return;
     }
     console.log(`[Main] Selected: "${best.title}" from ${best.source}`);

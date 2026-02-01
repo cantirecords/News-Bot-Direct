@@ -46,9 +46,18 @@ export async function selectBestArticle(articles, targetLanguage) {
         const now = new Date();
         const pubDate = new Date(art.pubDate);
         // Strictly 3 hours (10,800,000 ms) 
-        if ((now - pubDate) > 10800000) continue;
+        if ((now - pubDate) > 10800000) {
+            // Silently skip very old ones
+            continue;
+        }
 
-        if (await isNew(art)) {
+        const isKnown = !(await isNew(art));
+        if (isKnown) {
+            console.log(`[Selector] Skipping seen article: ${art.title.slice(0, 40)}...`);
+            continue;
+        }
+
+        if (true) { // replaces await isNew(art) since we handled it above
             const detection = detectCategory(art);
             let finalScore = calculateScore(art.title, art.source);
 
