@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { isNew } from './deduplicator.js';
 import { detectCategory } from './categoryDetector.js';
+import { getHighQualityImage } from './scraper.js';
 
 const STATE_FILE = path.resolve(process.cwd(), 'data/state.json');
 
@@ -17,8 +18,6 @@ async function getLastSource() {
 export async function saveLastSource(source) {
     await fs.writeFile(STATE_FILE, JSON.stringify({ lastSource: source }, null, 2));
 }
-
-import { getHighQualityImage } from './scraper.js';
 
 function calculateScore(text, source) {
     let score = 50; // Base score
@@ -43,6 +42,15 @@ function calculateScore(text, source) {
     if (lowerText.includes('live updates')) score += 40;
     if (lowerText.includes('shoot') || lowerText.includes('kill') || lowerText.includes('dead')) score += 40;
     if (lowerText.includes('war') || lowerText.includes('attack')) score += 30;
+
+    // Penalty for Sports (unless it's a massive trend)
+    const sportsKeywords = ['nba', 'nfl', 'mlb', 'trading', 'player', 'cavaliers', 'kings', 'lakers', 'team', 'score', 'game', 'espn'];
+    for (const sport of sportsKeywords) {
+        if (lowerText.includes(sport)) {
+            score -= 150; // Heavy penalty for sports
+            break;
+        }
+    }
 
     return score;
 }
@@ -111,23 +119,17 @@ export async function selectBestArticle(articles, targetLanguage) {
 
     if (candidates.length === 0) return null;
 
-    // Ordenamos por puntuación y fecha para elegir el mejor
-    const bestArticles = candidates.sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        return new Date(b.pubDate) - new Date(a.pubDate);
-    });
+    // Sort by score descending
+    candidates.sort((a, b) => b.score - a.score);
 
-    // Intentamos obtener la imagen de alta calidad solo para los mejores candidatos
-    // hasta encontrar uno que tenga una imagen válida
-    for (const best of bestArticles.slice(0, 5)) {
-        console.log(`[Selector] Fetching HQ image for candidate: ${best.title.slice(0, 30)}...`);
-        const hqImage = await getHighQualityImage(best.url);
-        if (hqImage) {
-            return { ...best, imageUrl: hqImage };
-        }
-        // If best has a fallback image URL from RSS, use it if no HQ found
-        if (best.imageUrl) return best;
+    // Pick the winner
+    const best = candidates[0];
+
+    // Attempt to get high quality image if original is missing or from RSS
+    const hqImage = await getHighQualityImage(best.url);
+    if (hqImage) {
+        best.imageUrl = hqImage;
     }
 
-    return null;
+    return best;
 }
