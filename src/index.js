@@ -101,7 +101,8 @@ async function main() {
 
     // 8. Append Hashtags to Description
     if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
-        finalArticle.description += '\n\n' + finalArticle.hashtags.join(' ');
+        const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
+        finalArticle.description += '\n\n' + hashFormatted;
     }
 
     // 9. Download image and convert to Base64 (True Image Data)
