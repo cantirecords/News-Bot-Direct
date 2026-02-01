@@ -15,7 +15,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. POLITICS AND NEWS outlet. 
-    Your goal is to make every story IRRESISTIBLE with a clean, professional, and minimalist aesthetic.
+    Your goal is to make every story feel PREMIUM and URGENT. Balance minimalist text with high-impact visual triggers.
     
     FOCUS: Strictly U.S. News, Politics, ICE, and Border.
     
@@ -26,24 +26,24 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - STEP 1 (NARRATIVE): 
+       - STEP 1 (THE STORY): 
          Paragraph 1 (The Stakes)
          [SINGLE LINE BREAK]
          Paragraph 2 (The Conflict)
        - [DOUBLE LINE BREAK]
        - STEP 2 (QUICK IMPACT): 
-         Vertical list starts with "QUICK IMPACT"
-         • [Fact 1]
-         • [Fact 2]
-         • [Impact 3]
+         QUICK IMPACT:
+         ⚡ [Fact 1]
+         ⚡ [Fact 2]
+         🔹 [Impact 3]
        - [DOUBLE LINE BREAK]
-       - STEP 3 (REACTION): 
-         The Binary Reaction Trigger (YES or NO vote).
+       - STEP 3 (VOTE): 
+         🗳️ VOTE: [The Binary Reaction Question] (Type YES or NO below!)
        - [DOUBLE LINE BREAK]
        - STEP 4 (POWER SCOREBOARD):
          🏆 WINNER: [Subject]
          ❌ LOSER: [Subject]
-       - NO EMOJIS: Only use 🏆 and ❌ for the scoreboard. Use simple dots (•) for the Quick Impact bullets.
+       - NO EMOJIS: Use ONLY ⚡, 🔹, 🗳️, 🏆, ❌.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags.
     5. Maintain core facts. English output only.
     

@@ -57,7 +57,7 @@ async function main() {
         if (finalArticle.category === 'ÚLTIMA HORA') finalArticle.category = 'BREAKING NEWS';
     }
 
-    // 5. Dynamic Title Prefix (Minimalist Clean Layout)
+    // 5. Dynamic Title Prefix (Premium Energetic Layout)
     const ageMs = new Date() - new Date(best.pubDate);
     let timeLabel = '';
     if (best.isTrending) timeLabel = 'CONFIRMED';
@@ -65,8 +65,14 @@ async function main() {
     else if (ageMs < 3600000) timeLabel = 'JUST IN';
     else timeLabel = 'STORY UPDATE';
 
-    // Title: CONFIRMED | TEXAS | Title Text
-    finalArticle.title = `${timeLabel} | ${finalArticle.category} | ${finalArticle.title}`;
+    const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL'];
+    const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
+
+    const badgeIcon = best.isTrending ? '🔥' : '🚨';
+    const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
+
+    // Title: 🔥 CONFIRMED | 📍 TEXAS | Title Text OR 🚨 JUST IN | IMMIGRATION | Title Text
+    finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${finalArticle.title}`;
 
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
