@@ -60,15 +60,20 @@ async function main() {
         const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION'];
         const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
 
-        const badgeIcon = best.isTrending ? '🔥' : '🚨';
-        const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
+        // Anti-Repetition & Cleaning Title Logic (Strip AI Emojis/Prefixes)
+        let cleanTitle = finalArticle.title
+            .replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove all emojis
+            .replace(/^[ |📍:-]+/, '') // Remove leading symbols
+            .replace(/^[^|]+\|/, '') // Remove "CATEGORY |" prefixes if AI added any
+            .trim();
 
-        // Anti-Repetition Title Logic
-        let cleanTitle = finalArticle.title;
         const catUpper = finalArticle.category.toUpperCase();
         if (cleanTitle.toUpperCase().startsWith(catUpper)) {
             cleanTitle = cleanTitle.slice(catUpper.length).replace(/^[ |📍:-]+/, '').trim();
         }
+
+        const badgeIcon = best.isTrending ? '🔥' : '🚨';
+        const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
 
         finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${cleanTitle}`;
 
@@ -86,9 +91,14 @@ async function main() {
         finalArticle.isTrending = best.isTrending || false;
 
         let finalDescription = finalArticle.description;
-        finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
 
-        if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
+        // Add Read More Link (Only if not already included by AI)
+        if (!finalDescription.includes('Read more:')) {
+            finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
+        }
+
+        // Add All Hashtags (Only if not already included by AI)
+        if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags) && !finalDescription.includes('#')) {
             const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
             finalDescription += `\n${hashFormatted} #TheVitalViral #News`;
         }

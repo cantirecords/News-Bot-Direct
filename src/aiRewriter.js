@@ -23,13 +23,13 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     CURRENT_CATEGORY: ${article.category || 'NEWS'}
     
     RULES:
-    1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
+    1. TITLE: MAXIMUM 11 words. NO prefixes, NO icons. Return ONLY the headline text.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
        [IMPORTANT: Start the string with a NEWLINE character]
        - STORY SECTION: 
-         Exactly 2 High-impact paragraphs about the news.
-         (Separated by 1 newline).
+         Exactly 2 High-impact narrative paragraphs about the news.
+         (Separated by 1 newline). NO emojis in these paragraphs.
        - [SINGLE LINE BREAK]
        - QUICK IMPACT:
          ⚡ [Fact 1]
@@ -42,7 +42,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
        - POWER SCOREBOARD:
          🏆 WINNER: [Subject]
          ❌ LOSER: [Subject]
-       - NO EMOJIS: Use ONLY ⚡, 🔸, 🗳️, 🏆, ❌.
+       - CRITICAL: DO NOT include hashtags or "Read more" links in this field.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags.
     5. Maintain core facts. English output only.
     

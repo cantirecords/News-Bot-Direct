@@ -30,6 +30,21 @@ async function forceEnglishTest() {
     let finalArticle = rewritten;
     finalArticle.language = 'en';
 
+    // 5. Dynamic Title & Cleaning (Synced with Main)
+    const ageMs = new Date() - new Date(best.pubDate);
+    let timeLabel = (ageMs < 1200000) ? 'DEVELOPING' : (ageMs < 3600000) ? 'JUST IN' : 'STORY UPDATE';
+
+    let cleanTitle = finalArticle.title
+        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+        .replace(/^[ |📍:-]+/, '')
+        .replace(/^[^|]+\|/, '')
+        .trim();
+
+    const badgeIcon = '🚨'; // Default for test
+    const locationPart = finalArticle.category;
+
+    finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${cleanTitle}`;
+
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
         if (!text) return '';
@@ -40,6 +55,17 @@ async function forceEnglishTest() {
     finalArticle.cloudinaryShortDesc = clsafe(finalArticle.shortDescription);
     finalArticle.cloudinaryCategory = clsafe(finalArticle.category);
     finalArticle.cloudinarySource = clsafe(finalArticle.source);
+
+    // 7. Duplicate Checks for Description
+    let finalDescription = finalArticle.description;
+    if (!finalDescription.includes('Read more:')) {
+        finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
+    }
+    if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags) && !finalDescription.includes('#')) {
+        const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
+        finalDescription += `\n${hashFormatted} #TheVitalViral #News`;
+    }
+    finalArticle.description = finalDescription;
 
     // 7. Image to Base64
     try {
