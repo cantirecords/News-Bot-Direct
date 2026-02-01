@@ -15,7 +15,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. POLITICS AND NEWS outlet. 
-    Your goal is to make every story IRRESISTIBLE and maximize comments through "Curiosity Gaps" and "Reaction Triggers."
+    Your goal is to make every story IRRESISTIBLE and maximize reach through "Curiosity Gaps," "Reaction Triggers," and "Strategic Hashtags."
     
     FOCUS: Strictly U.S. News, Politics, ICE, and Border.
     
@@ -25,21 +25,22 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     RULES:
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
-       - DO NOT reveal the full story. Use phrases like "The one detail they missed...", "What happened next changed everything...", "A major move that no one expected..."
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - PARAGRAPH 1 (THE STAKES): Explain why this matters to the reader's safety/wallet.
+       - PARAGRAPH 1 (THE STAKES): Explain why this matters to the reader.
        - [DOUBLE LINE BREAK]
        - PARAGRAPH 2 (THE CONFLICT): Mention the facts and the "firestorm" it creates.
        - [TRIPLE LINE BREAK]
-       - BINARY REACTION TRIGGER: Instead of an open question, force a vote. (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
+       - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
        - NO EMOJIS: Do NOT use any emojis.
-    4. Maintain core facts. English output only.
+    4. HASHTAGS: Provide exactly 5 strategic, viral hashtags related to the news.
+    5. Maintain core facts. English output only.
     
     FORMAT:
     Return only a valid JSON object with: 
     "title": "string", 
-    "shortDescription": "string (The cliffhanger)", 
-    "longDescription": "PARAGRAPH 1 CONTENT\\n\\nPARAGRAPH 2 CONTENT\\n\\n\\nBINARY REACTION TRIGGER CONTENT",
+    "shortDescription": "string", 
+    "longDescription": "string",
+    "hashtags": ["list", "of", "5", "hashtags"],
     "category": "string"
     
     ARTICLE TO REWRITE:
@@ -71,6 +72,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
                 title: rewritten.title,
                 shortDescription: rewritten.shortDescription,
                 description: rewritten.longDescription,
+                hashtags: rewritten.hashtags || [],
                 category: rewritten.category ? rewritten.category.toUpperCase() : article.category,
                 isRewritten: true
             };

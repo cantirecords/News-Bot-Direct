@@ -91,7 +91,20 @@ async function main() {
     finalArticle.categoryColor = best.categoryColor || '#333333';
     finalArticle.isTrending = best.isTrending || false;
 
-    // 7. Download image and convert to Base64 (True Image Data)
+    // 7. Dynamic Badge Type (Authority)
+    let badgeType = 'STORY UPDATED';
+    if (best.isTrending) badgeType = 'TOP TRENDING';
+    else if (best.category === 'TRUMP') badgeType = 'OFFICIAL VISION';
+    else if (best.category === 'BORDER' || best.category === 'ICE') badgeType = 'BORDER ALERT';
+
+    finalArticle.badgeType = badgeType;
+
+    // 8. Append Hashtags to Description
+    if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
+        finalArticle.description += '\n\n' + finalArticle.hashtags.join(' ');
+    }
+
+    // 9. Download image and convert to Base64 (True Image Data)
     try {
         console.log('[Main] Downloading image for Base64 conversion...');
         const imageResponse = await axios.get(finalArticle.imageUrl, {
