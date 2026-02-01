@@ -22,9 +22,11 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     
     RULES:
     1. TITLE: MAXIMUM 11 words. High-impact and bold.
-    2. SHORT_DESCRIPTION (Image Overlay): EXACTLY around 15 words. Dramatic and punchy with 1-2 emojis.
+    2. SHORT_DESCRIPTION (Image Overlay): EXACTLY around 15 words. Dramatic and punchy.
     3. CATEGORY: If the news story is tied to a specific U.S. State (Texas, Florida, New York, etc.), use that state as the CATEGORY. Otherwise, use a high-impact news word (e.g., ICE, TRUMP, IMMIGRATION, BREAKING).
-    4. LONG_DESCRIPTION (Facebook Caption): EXACTLY two informative paragraphs. Must be detailed and professional yet engaging. Do NOT use any emojis in this long description.
+    4. LONG_DESCRIPTION (Facebook Caption): EXACTLY two informative paragraphs. Must be detailed and professional yet engaging. 
+       - CRITICAL: At the very end of the second paragraph, include a brief, provocative, and smart question to encourage user comments (e.g., "Do you believe this action will achieve its intended goal?").
+       - NO EMOJIS: Do NOT use any emojis in this long description.
     5. Maintain all core facts. No fake details.
     6. English output only.
     

@@ -30,9 +30,9 @@
         "language": "en"
     },
     {
-        "name": "Telemundo",
-        "url": "https://www.telemundo.com/feeds/get-rss/v1/noticias",
-        "category": "GENERAL",
+        "name": "La Opinión",
+        "url": "https://laopinion.com/feed/",
+        "category": "US",
         "language": "es"
     }
 ]
