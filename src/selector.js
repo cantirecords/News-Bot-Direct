@@ -45,8 +45,8 @@ export async function selectBestArticle(articles, targetLanguage) {
     for (const art of articles) {
         const now = new Date();
         const pubDate = new Date(art.pubDate);
-        // Strictly 1 hour (3600000 ms)
-        if ((now - pubDate) > 3600000) continue;
+        // Strictly 3 hours (10,800,000 ms) 
+        if ((now - pubDate) > 10800000) continue;
 
         if (await isNew(art)) {
             const detection = detectCategory(art);
