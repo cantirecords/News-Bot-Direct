@@ -70,6 +70,23 @@ export function detectCategory(article) {
         }
     }
 
+    // --- NEW: Dynamic Noun Extraction (The "Authority" Fallback) ---
+    // If no priority category/state is found, extract a key subject from the title
+    if (detected === 'BREAKING NEWS' || detected === 'GENERAL') {
+        const titleWords = article.title.split(' ');
+        // Look for the first/second prominent capitalized word (excluding common starters)
+        const commonStarters = ['A', 'AN', 'THE', 'WHY', 'HOW', 'WHEN', 'WHERE', 'WHO'];
+        for (let i = 0; i < Math.min(titleWords.length, 5); i++) {
+            const word = titleWords[i].replace(/[^a-zA-Z]/g, '');
+            if (word.length > 3 &&
+                word[0] === word[0].toUpperCase() &&
+                !commonStarters.includes(word.toUpperCase())) {
+                detected = word.toUpperCase();
+                break;
+            }
+        }
+    }
+
     // Color Mapping (Fail-safe)
     const colorMapping = {
         'TRUMP': '#D4AF37',       // Gold
@@ -84,7 +101,7 @@ export function detectCategory(article) {
         'BREAKING NEWS': '#000000' // Black
     };
 
-    const finalColor = colorMapping[detected] || '#333333'; // Default to Dark Gray
+    const finalColor = colorMapping[detected] || '#4B0082'; // Indigo for dynamic categories
 
     return {
         category: detected,
