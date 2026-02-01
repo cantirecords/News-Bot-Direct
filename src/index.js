@@ -65,7 +65,7 @@ async function main() {
     else if (ageMs < 3600000) timeLabel = 'JUST IN';
     else timeLabel = 'STORY UPDATE';
 
-    const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL'];
+    const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION'];
     const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
 
     const badgeIcon = best.isTrending ? '🔥' : '🚨';
@@ -107,7 +107,7 @@ async function main() {
     let finalDescription = finalArticle.description;
 
     // Add Read More Link
-    finalDescription += `\n🔗 Read more: ${finalArticle.source}`;
+    finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
 
     // Add All Hashtags at the Absolute Bottom
     if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
