@@ -65,11 +65,15 @@ async function main() {
     else if (ageMs < 3600000) timeLabel = 'JUST IN';
     else timeLabel = 'STORY UPDATE';
 
-    const badgeIcon = best.isTrending ? '🔥' : '🚨';
-    const locationPart = `📍 ${finalArticle.category}`;
+    const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL'];
+    const isSpecialLocation = !generalTopics.includes(finalArticle.category);
 
-    // Final Title: 🔥 TOP TRENDING 📍 TEXAS | Title Text
-    finalArticle.title = `${badgeIcon} ${timeLabel} ${locationPart} | ${finalArticle.title}`;
+    const badgeIcon = best.isTrending ? '🔥' : '🚨';
+    const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
+    const separator = isSpecialLocation ? ' | ' : ' | '; // Consistent separator
+
+    // Final Title: 🔥 TOP TRENDING 📍 TEXAS | Title Text OR 🔥 TOP TRENDING | IMMIGRATION | Title Text
+    finalArticle.title = `${badgeIcon} ${timeLabel} ${isSpecialLocation ? '' : '| '}${locationPart} | ${finalArticle.title}`;
 
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
