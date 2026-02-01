@@ -19,7 +19,11 @@ export function detectCategory(article) {
         'border': 'BORDER',
         'breaking': 'BREAKING NEWS',
         'white house': 'POLITICS',
-        'court': 'LEGAL'
+        'court': 'LEGAL',
+        'showdown': 'SHOWDOWN',
+        'clash': 'CLASH',
+        'battle': 'BATTLE',
+        'emergency': 'EMERGENCY'
     };
 
     for (const [kw, cat] of Object.entries(mapping)) {
