@@ -26,28 +26,27 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - START WITH "QUICK IMPACT" SECTION: Exactly 3 short, punchy bullet points.
-         Example:
-         📍 [Location/Subject context]
-         📂 [Action/Fact context]
-         ⚠️ [Warning/Impact context]
+       - START WITH "QUICK IMPACT" SECTION: 3 punchy bullet points.
+         Example: 📍 [Context] | 📂 [Action] | ⚠️ [Impact]
        - [DOUBLE LINE BREAK]
        - PARAGRAPH 1 (THE STAKES): Why this matters to the reader.
        - [DOUBLE LINE BREAK]
-       - PARAGRAPH 2 (THE CONFLICT): Mention the facts and the political divide.
-       - [TRIPLE LINE BREAK]
-       - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
+       - PARAGRAPH 2 (THE CONFLICT): The facts and the political divide.
        - [DOUBLE LINE BREAK]
-       - POWER SCOREBOARD: (Format: 🏆 WINNER: SUBJECT | ❌ LOSER: SUBJECT).
-       - NO EMOJIS: Use only the specific emojis for bullets (📍, 📂, ⚠️) and scoreboard (🏆, ❌). Do not use any other emojis.
-    4. HASHTAGS: Provide exactly 5 strategic, viral hashtags related to the news.
+       - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
+       - [TRIPLE LINE BREAK]
+       - POWER SCOREBOARD:
+         🏆 WINNER: [Subject]
+         ❌ LOSER: [Subject]
+       - NO EMOJIS: Only use 📍, 📂, ⚠️, 🏆, ❌.
+    4. HASHTAGS: Provide exactly 5 strategic, viral hashtags.
     5. Maintain core facts. English output only.
     
     FORMAT:
     Return only a valid JSON object with: 
     "title": "string", 
     "shortDescription": "string", 
-    "longDescription": "string (Including bullets and spacing)",
+    "longDescription": "string",
     "hashtags": ["list", "of", "5", "hashtags"],
     "category": "string"
     

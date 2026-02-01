@@ -57,31 +57,38 @@ async function main() {
         if (finalArticle.category === 'ÚLTIMA HORA') finalArticle.category = 'BREAKING NEWS';
     }
 
-    // 5. Dynamic Title Prefix (Authority, Urgency & Location)
+    // 5. Dynamic Title Prefix (The "Elite Agency" Layout)
     const ageMs = new Date() - new Date(best.pubDate);
-    let timePrefix = '';
-    if (best.isTrending) timePrefix = '[CONFIRMED] ';
-    else if (ageMs < 1200000) timePrefix = '[DEVELOPING] ';
-    else if (ageMs < 3600000) timePrefix = '[JUST IN] ';
+    let timeLabel = '';
+    if (best.isTrending) timeLabel = 'CONFIRMED';
+    else if (ageMs < 1200000) timeLabel = 'DEVELOPING';
+    else if (ageMs < 3600000) timeLabel = 'JUST IN';
+    else timeLabel = 'STORY UPDATE';
 
-    // Add Location Prefix (Reportero en Vivo)
-    const locationPrefix = `📍 ${finalArticle.category} | `;
-    finalArticle.title = locationPrefix + timePrefix + finalArticle.title;
+    const badgeIcon = best.isTrending ? '🔥' : '🚨';
+    const locationPart = `📍 ${finalArticle.category}`;
+
+    // Final Title: 🔥 TOP TRENDING 📍 TEXAS | Title Text
+    finalArticle.title = `${badgeIcon} ${timeLabel} ${locationPart} | ${finalArticle.title}`;
 
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
         if (!text) return '';
         return text
-            .replace(/%/g, '%25')     // Must be first!
-            .replace(/,/g, '%2C')     // Comma
-            .replace(/\./g, '%2E')    // Dot
-            .replace(/\//g, '%2F')    // Slash
-            .replace(/\?/g, '%3F')    // Question
-            .replace(/!/g, '%21')     // Exclamation
-            .replace(/:/g, '%3A')     // Colon
-            .replace(/'/g, '%27')     // Single quote
-            .replace(/"/g, '%22')     // Double quote
-            .replace(/&/g, '%26');    // Ampersand
+            .replace(/%/g, '%25')
+            .replace(/\//g, '%2F')
+            .replace(/\?/g, '%3F')
+            .replace(/#/g, '%23')
+            .replace(/&/g, '%26')
+            .replace(/\+/g, '%2B')
+            .replace(/,/g, '%2C')
+            .replace(/:/g, '%3A')
+            .replace(/;/g, '%3B')
+            .replace(/=/g, '%3D')
+            .replace(/"/g, "'")
+            .replace(/\n/g, ' ')
+            .replace(/\r/g, ' ')
+            .trim();
     };
 
     finalArticle.cloudinaryTitle = clsafe(finalArticle.title);
@@ -93,19 +100,19 @@ async function main() {
     finalArticle.categoryColor = best.categoryColor || '#333333';
     finalArticle.isTrending = best.isTrending || false;
 
-    // 7. Dynamic Badge Type (Authority)
-    let badgeType = 'STORY UPDATED';
-    if (best.isTrending) badgeType = 'TOP TRENDING';
-    else if (best.category === 'TRUMP') badgeType = 'OFFICIAL VISION';
-    else if (best.category === 'BORDER' || best.category === 'ICE') badgeType = 'BORDER ALERT';
+    // 7. Append Source Link & Hashtags to Description (The Final Polish)
+    let finalDescription = finalArticle.description;
 
-    finalArticle.badgeType = badgeType;
+    // Add Read More Link
+    finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
 
-    // 8. Append Hashtags to Description
+    // Add All Hashtags at the Absolute Bottom
     if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags)) {
         const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
-        finalArticle.description += '\n\n' + hashFormatted;
+        finalDescription += `\n\n${hashFormatted} #TheVitalViral #News`;
     }
+
+    finalArticle.description = finalDescription;
 
     // 9. Download image and convert to Base64 (True Image Data)
     try {
