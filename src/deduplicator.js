@@ -14,8 +14,28 @@ async function loadSeen() {
 
 export async function isNew(article) {
     const seen = await loadSeen();
-    // Check URL or very similar title
-    return !seen.some(s => s.url === article.url || s.title.toLowerCase() === article.title.toLowerCase());
+    const clean = (str) => (str || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ').filter(w => w.length > 3);
+    const artWords = clean(article.title);
+
+    for (const s of seen) {
+        // 1. Strict URL Check
+        if (s.url === article.url) return false;
+
+        // 2. Strict Title Check
+        if (s.title.toLowerCase() === article.title.toLowerCase()) return false;
+
+        // 3. Fuzzy Title Check (Over 60% keyword overlap)
+        const seenWords = clean(s.title);
+        const overlap = artWords.filter(w => seenWords.includes(w));
+        const similarity = overlap.length / Math.max(artWords.length, seenWords.length);
+
+        if (similarity > 0.6) {
+            console.log(`[Deduplicator] Potential duplicate found (Similarity: ${Math.round(similarity * 100)}%): "${article.title.slice(0, 30)}..." matches seen "${s.title.slice(0, 30)}..."`);
+            return false;
+        }
+    }
+
+    return true;
 }
 
 export async function markAsSeen(article) {

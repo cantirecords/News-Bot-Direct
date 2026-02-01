@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 import { fetchNews } from './src/scraper.js';
 import { rewriteArticle } from './src/aiRewriter.js';
 import { sendToWebhook } from './src/webhook.js';
+import { selectBestArticle } from './src/selector.js';
+import { markAsSeen } from './src/deduplicator.js';
 
 dotenv.config();
 
@@ -9,21 +11,14 @@ async function forceEnglishTest() {
     console.log('--- FORCED ENGLISH SIGNAL TEST ---');
     const targetLang = 'en';
 
-    // 2. Fetch articles from all sources
+    // 2. Fetch articles
     const articles = await fetchNews();
 
-    // 3. Selection (Find first with image)
-    let best = null;
-    for (const art of articles) {
-        if (art.imageUrl) {
-            best = art;
-            break;
-        }
-        console.log(`[Main] Skipping "${art.title.slice(0, 30)}..." (No image)`);
-    }
+    // 3. Selection (Using the smart selector)
+    const best = await selectBestArticle(articles, targetLang);
 
     if (!best) {
-        console.log('[Main] No articles with images found in the feed.');
+        console.log('[Main] No new articles found in the last 12 hours.');
         return;
     }
     console.log(`[Main] Selected: "${best.title}" from ${best.source}`);
@@ -75,6 +70,7 @@ async function forceEnglishTest() {
 
     if (success) {
         console.log('[Main] Success! Forced English signal sent.');
+        await markAsSeen(best);
     } else {
         console.log('[Main] Failed to send.');
     }
