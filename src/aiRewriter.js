@@ -15,7 +15,7 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. POLITICS AND NEWS outlet. 
-    Your goal is to make every story IRRESISTIBLE and maximize reach through "Curiosity Gaps," "Reaction Triggers," and "Strategic Hashtags."
+    Your goal is to make every story IRRESISTIBLE and maximize reach through "Curiosity Gaps," "Reaction Triggers," and the "Power Scoreboard."
     
     FOCUS: Strictly U.S. News, Politics, ICE, and Border.
     
@@ -28,10 +28,12 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     3. LONG_DESCRIPTION (Facebook Caption): 
        - PARAGRAPH 1 (THE STAKES): Explain why this matters to the reader.
        - [DOUBLE LINE BREAK]
-       - PARAGRAPH 2 (THE CONFLICT): Mention the facts and the "firestorm" it creates.
+       - PARAGRAPH 2 (THE CONFLICT): Mention the facts and the political divide.
        - [TRIPLE LINE BREAK]
        - BINARY REACTION TRIGGER: (e.g., "Do you support this move? Type YES or NO below to cast your vote!")
-       - NO EMOJIS: Do NOT use any emojis.
+       - [DOUBLE LINE BREAK]
+       - POWER SCOREBOARD: (Format: 🏆 WINNER: SUBJECT | ❌ LOSER: SUBJECT). Identify which political side or entity "won" or "lost" this specific news event.
+       - NO EMOJIS: Only the specific emojis for the scoreboard (🏆, ❌) are allowed. Do not use any other emojis.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags related to the news.
     5. Maintain core facts. English output only.
     
