@@ -26,23 +26,18 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     1. TITLE: MAXIMUM 11 words. NO prefixes, NO icons. Return ONLY the headline text.
     2. SHORT_DESCRIPTION (Image Overlay): MUST be a CURIOSITY CLIFFHANGER (Max 10 words). 
     3. LONG_DESCRIPTION (Facebook Caption): 
-       [IMPORTANT: Start the string with a NEWLINE character]
-       - STORY SECTION: 
-         Exactly 2 High-impact narrative paragraphs about the news.
-         (Separated by 1 newline). NO emojis in these paragraphs.
-       - [SINGLE LINE BREAK]
-       - QUICK IMPACT:
-         ⚡ [Fact 1]
-         ⚡ [Fact 2]
-         🔸 [Impact 3]
-       - [SINGLE LINE BREAK]
-       - VOTE SECTION:
-         🗳️ VOTE: [The Question] (Type YES or NO below!)
-       - [SINGLE LINE BREAK]
-       - POWER SCOREBOARD:
-         🏆 WINNER: [Subject]
-         ❌ LOSER: [Subject]
-       - CRITICAL: DO NOT include hashtags or "Read more" links in this field.
+       [IMPORTANT: Start with a NEWLINE character]
+       - 2 high-impact narrative paragraphs (separatated by 1 newline). NO emojis here.
+       - [DOUBLE NEWLINE]
+       - ⚡ [Fact 1]
+       - ⚡ [Fact 2]
+       - 🔸 [Impact 3]
+       - [DOUBLE NEWLINE]
+       - 🗳️ VOTE: [Question] (Type YES or NO below!)
+       - [DOUBLE NEWLINE]
+       - 🏆 WINNER: [Subject]
+       - ❌ LOSER: [Subject]
+       - CRITICAL: NO hashtags, NO "Read more" links, NO technical headers.
     4. HASHTAGS: Provide exactly 5 strategic, viral hashtags.
     5. Maintain core facts. English output only.
     

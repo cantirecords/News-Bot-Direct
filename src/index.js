@@ -92,15 +92,15 @@ async function main() {
 
         let finalDescription = finalArticle.description;
 
-        // Add Read More Link (Only if not already included by AI)
+        // Add Read More Link (Perfect Spacing)
         if (!finalDescription.includes('Read more:')) {
             finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
         }
 
-        // Add All Hashtags (Only if not already included by AI)
+        // Add All Hashtags (Perfect Spacing)
         if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags) && !finalDescription.includes('#')) {
             const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
-            finalDescription += `\n${hashFormatted} #TheVitalViral #News`;
+            finalDescription += `\n\n${hashFormatted} #TheVitalViral #News`;
         }
 
         finalArticle.description = finalDescription;

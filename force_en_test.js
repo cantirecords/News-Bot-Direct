@@ -63,7 +63,7 @@ async function forceEnglishTest() {
     }
     if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags) && !finalDescription.includes('#')) {
         const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
-        finalDescription += `\n${hashFormatted} #TheVitalViral #News`;
+        finalDescription += `\n\n${hashFormatted} #TheVitalViral #News`;
     }
     finalArticle.description = finalDescription;
 
