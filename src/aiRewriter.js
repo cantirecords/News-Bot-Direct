@@ -9,6 +9,10 @@ const groq = new Groq({
 export async function rewriteArticle(article, clickbaitLevel = 'medium') {
     if (process.env.AI_REWRITE_ENABLED !== 'true') return article;
 
+    if (process.env.GITHUB_ACTIONS && !process.env.GROQ_API_KEY) {
+        console.error('[AI-Rewriter] CRITICAL: GROQ_API_KEY is missing in GitHub Secrets! AI rewrite will be skipped.');
+    }
+
     const prompt = `
     You are a master social media news editor specializing in VIRAL, HIGH-IMPACT, and DRAMATIC headlines for U.S. Breaking News.
     Your goal is to rewrite the news article to be ABSOLUTELY CAPTIVATING and SENSATIONAL, but strictly based on REAL, VERIFIED facts.

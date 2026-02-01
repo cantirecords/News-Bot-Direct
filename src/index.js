@@ -108,7 +108,10 @@ async function main() {
         await incrementPostCount(targetLang);
         await saveLastSource(best.source);
     } else {
-        console.log('[Main] Failed to send to webhook.');
+        console.error('[Main] Failed to send to webhook.');
+        if (process.env.GITHUB_ACTIONS) {
+            process.exit(1); // Fail the GitHub Action explicitly
+        }
     }
 
     console.log('--- Run Completed ---');

@@ -7,11 +7,16 @@ export async function sendToWebhook(article) {
 
     // Debug info for GitHub Actions (Doesn't leak the secret)
     if (process.env.GITHUB_ACTIONS) {
-        console.log(`[Webhook] Running in GitHub Actions. URL length: ${url ? url.length : 0}`);
+        if (!url) {
+            console.error('[Webhook] CRITICAL: WEBHOOK_URL is missing in GitHub Secrets!');
+        } else if (url.length < 10) {
+            console.error(`[Webhook] CRITICAL: WEBHOOK_URL is too short (${url.length} chars). Check your Secrets.`);
+        } else {
+            console.log(`[Webhook] URL detected (${url.length} chars). Sending...`);
+        }
     }
 
     if (!url || url.includes('your-unique-webhook-id') || url.length < 10) {
-        console.warn('[Webhook] No valid WEBHOOK_URL configured. Skipping send.');
         return false;
     }
 
