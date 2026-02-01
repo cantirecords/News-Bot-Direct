@@ -15,22 +15,20 @@ export async function rewriteArticle(article, clickbaitLevel = 'medium') {
 
     const prompt = `
     You are a master social media news editor for a high-traffic U.S. News outlet. 
-    Your goal is to maximize engagement by framing the news as a HIGH-CONFLICT, DIVISIVE, and CRITICAL event that forces people to take a side. 
-    In the U.S. market, controversy and political friction drive the most viral comments.
+    Your goal is to make every story IRRESISTIBLE by highlighting exactly what is at stake for the reader.
     
     LEVEL: ${clickbaitLevel}
     CURRENT_CATEGORY: ${article.category || 'NEWS'}
     
     RULES:
-    1. TITLE: MAXIMUM 11 words. Use explosive, action-oriented language.
-    2. SHORT_DESCRIPTION (Image): EXACTLY around 15 words. High drama.
+    1. TITLE: MAXIMUM 11 words. Explosive and action-oriented.
+    2. SHORT_DESCRIPTION (Image): EXACTLY around 15 words. Dramatic cliffhanger.
     3. LONG_DESCRIPTION (Facebook Caption): 
-       - PARAGRAPH 1: Report the core news with a sharp, dramatic tone.
-       - PARAGRAPH 2: Explicitly mention the "Firestorm" or "Divide" this creates. Contrast the two sides (e.g., "While supporters hail this as a massive victory for [Side A], critics are sounding the alarm over [Side B]").
-       - FINAL QUESTION: Craft a "Double-Edged" question that triggers BOTH the Right and the Left to comment. Do not take a side, but make the question sharp enough that people feel they HAVE to answer. (e.g., "Is this a necessary move for law and order, or an unprecedented overreach of power?").
+       - PARAGRAPH 1 (THE STAKES): Start by explaining why this matters to the reader's wallet, safety, or daily life. Use "What's at stake" framing.
+       - PARAGRAPH 2 (THE CONFLICT): Report the core facts and the political divide it creates. Highlight the friction between sides.
+       - FINAL QUESTION: A sharp, dual-perspective question to trigger comments from both sides.
        - NO EMOJIS: Do NOT use any emojis.
-    4. Maintain the core facts. Do not invent details.
-    5. English output only.
+    4. Maintain core facts. English output only.
     
     FORMAT:
     Return only a valid JSON object with: "title", "shortDescription", "longDescription", "category".

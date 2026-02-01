@@ -55,8 +55,16 @@ async function main() {
         if (finalArticle.category === 'ÚLTIMA HORA') finalArticle.category = 'BREAKING NEWS';
     }
 
-    // 6. Pre-process for Cloudinary (Fix "Bad Request" error)
-    // Cloudinary's l_text is extremely sensitive. We need to be very aggressive.
+    // 5. Dynamic Title Prefix (Authority & Urgency)
+    const ageMs = new Date() - new Date(best.pubDate);
+    let prefix = '';
+    if (best.isTrending) prefix = '[CONFIRMED] ';
+    else if (ageMs < 1200000) prefix = '[DEVELOPING] '; // 20 min
+    else if (ageMs < 3600000) prefix = '[JUST IN] ';    // 60 min
+
+    finalArticle.title = prefix + finalArticle.title;
+
+    // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
         if (!text) return '';
         return text
