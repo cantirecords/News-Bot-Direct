@@ -81,7 +81,17 @@ async function main() {
 
         const clsafe = (text) => {
             if (!text) return '';
-            return text.replace(/%/g, '%25').replace(/,/g, '%2C').replace(/\./g, '%2E').replace(/&/g, '%26').replace(/\n/g, ' ').trim();
+            // Cloudinary/URL Safety: Replace % first, then other url-breaking chars
+            return text
+                .replace(/%/g, '%25')
+                .replace(/\//g, '%2F')
+                .replace(/\?/g, '%3F')
+                .replace(/#/g, '%23')
+                .replace(/,/g, '%2C')
+                .replace(/\./g, '%2E')
+                .replace(/&/g, '%26')
+                .replace(/\n/g, ' ')
+                .trim();
         };
 
         finalArticle.cloudinaryTitle = clsafe(finalArticle.title);

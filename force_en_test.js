@@ -52,7 +52,16 @@ async function forceEnglishTest() {
     // 6. Pre-process for Cloudinary
     const clsafe = (text) => {
         if (!text) return '';
-        return text.replace(/%/g, '%25').replace(/,/g, '%2C').replace(/\./g, '%2E').replace(/&/g, '%26');
+        return text
+            .replace(/%/g, '%25')
+            .replace(/\//g, '%2F')
+            .replace(/\?/g, '%3F')
+            .replace(/#/g, '%23')
+            .replace(/,/g, '%2C')
+            .replace(/\./g, '%2E')
+            .replace(/&/g, '%26')
+            .replace(/\n/g, ' ')
+            .trim();
     };
 
     finalArticle.cloudinaryTitle = clsafe(finalArticle.title);
