@@ -57,7 +57,13 @@ async function main() {
         else if (ageMs < 3600000) timeLabel = 'JUST IN';
         else timeLabel = 'STORY UPDATE';
 
-        const generalTopics = ['IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER', 'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH', 'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION'];
+        const generalTopics = [
+            'IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER',
+            'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH',
+            'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION',
+            'CLINTONS', 'CLINTON', 'BIDEN', 'HARRIS', 'DEMOCRATS', 'REPUBLICANS',
+            'WHITE HOUSE', 'SUPREME COURT', 'WORLD NEWS', 'ECONOMY', 'CRIME'
+        ];
         const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
 
         // Anti-Repetition & Cleaning Title Logic (Strip AI Emojis/Prefixes)

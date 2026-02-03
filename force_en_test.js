@@ -40,8 +40,17 @@ async function forceEnglishTest() {
         .replace(/^[^|]+\|/, '')
         .trim();
 
+    const generalTopics = [
+        'IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER',
+        'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH',
+        'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION',
+        'CLINTONS', 'CLINTON', 'BIDEN', 'HARRIS', 'DEMOCRATS', 'REPUBLICANS',
+        'WHITE HOUSE', 'SUPREME COURT', 'WORLD NEWS', 'ECONOMY', 'CRIME'
+    ];
+    const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
+
     const badgeIcon = '🚨'; // Default for test
-    const locationPart = finalArticle.category;
+    const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
 
     finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${cleanTitle}`;
 
