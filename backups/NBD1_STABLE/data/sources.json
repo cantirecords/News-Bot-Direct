@@ -1,0 +1,38 @@
+[
+    {
+        "name": "CNN",
+        "url": "http://rss.cnn.com/rss/cnn_topstories.rss",
+        "category": "WORLD",
+        "language": "en"
+    },
+    {
+        "name": "Fox News",
+        "url": "http://feeds.foxnews.com/foxnews/latest",
+        "category": "US",
+        "language": "en"
+    },
+    {
+        "name": "ABC News",
+        "url": "https://abcnews.go.com/abcnews/topstories",
+        "category": "WORLD",
+        "language": "en"
+    },
+    {
+        "name": "NBC News",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/world",
+        "category": "WORLD",
+        "language": "en"
+    },
+    {
+        "name": "NY Post",
+        "url": "https://nypost.com/feed/",
+        "category": "US",
+        "language": "en"
+    },
+    {
+        "name": "La Opinión",
+        "url": "https://laopinion.com/feed/",
+        "category": "US",
+        "language": "es"
+    }
+]

@@ -1,0 +1,109 @@
+import dotenv from 'dotenv';
+import { fetchNews } from './src/scraper.js';
+import { rewriteArticle } from './src/aiRewriter.js';
+import { sendToWebhook } from './src/webhook.js';
+import { selectBestArticle } from './src/selector.js';
+import { markAsSeen } from './src/deduplicator.js';
+import { GENERAL_TOPICS } from './src/categoryDetector.js';
+
+dotenv.config();
+
+async function forceEnglishTest() {
+    console.log('--- FORCED ENGLISH SIGNAL TEST ---');
+    const targetLang = 'en';
+
+    // 2. Fetch articles
+    const articles = await fetchNews();
+
+    // 3. Selection (Using the smart selector)
+    const best = await selectBestArticle(articles, targetLang);
+
+    if (!best) {
+        console.log('[Main] No new articles found in the last 12 hours.');
+        return;
+    }
+    console.log(`[Main] Selected: "${best.title}" from ${best.source}`);
+
+    // 4. AI Rewrite
+    console.log('[Main] Rewriting article with AI...');
+    const rewritten = await rewriteArticle(best, process.env.CLICKBAIT_LEVEL);
+
+    let finalArticle = rewritten;
+    finalArticle.language = 'en';
+
+    // 5. Dynamic Title & Cleaning (Synced with Main)
+    const ageMs = new Date() - new Date(best.pubDate);
+    let timeLabel = (ageMs < 1200000) ? 'DEVELOPING' : (ageMs < 3600000) ? 'JUST IN' : 'STORY UPDATE';
+
+    let cleanTitle = finalArticle.title
+        .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+        .replace(/^[ |📍:🚨🔥-]+/, '')
+        .replace(/^[^|]+\|/, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const isSpecialLocation = !GENERAL_TOPICS.includes(finalArticle.category.toUpperCase());
+
+    const badgeIcon = '🚨'; // Default for test
+    const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
+
+    finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${cleanTitle}`;
+
+    // 6. Pre-process for Cloudinary
+    const clsafe = (text) => {
+        if (!text) return '';
+        return text.replace(/%/g, '%25').replace(/,/g, '%2C').replace(/\./g, '%2E').replace(/&/g, '%26');
+    };
+
+    finalArticle.cloudinaryTitle = clsafe(finalArticle.title);
+    finalArticle.cloudinaryShortDesc = clsafe(finalArticle.shortDescription);
+    finalArticle.cloudinaryCategory = clsafe(finalArticle.category);
+    finalArticle.cloudinarySource = clsafe(finalArticle.source);
+
+    // 7. Duplicate Checks for Description
+    let finalDescription = finalArticle.description;
+    if (!finalDescription.includes('Read more:')) {
+        finalDescription += `\n\n🔗 Read more: ${finalArticle.source}`;
+    }
+    if (finalArticle.hashtags && Array.isArray(finalArticle.hashtags) && !finalDescription.includes('#')) {
+        const hashFormatted = finalArticle.hashtags.map(tag => tag.startsWith('#') ? tag : '#' + tag).join(' ');
+        finalDescription += `\n\n${hashFormatted} #TheVitalViral #News`;
+    }
+    finalArticle.description = finalDescription;
+
+    // 7. Image to Base64
+    try {
+        console.log('[Main] Downloading image for Base64 conversion...');
+        const axios = (await import('axios')).default;
+        const imageResponse = await axios.get(finalArticle.imageUrl, {
+            responseType: 'arraybuffer',
+            timeout: 5000,
+            headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
+
+        finalArticle.rawImageUrl = finalArticle.imageUrl;
+        finalArticle.b64ImageUrl = Buffer.from(imageResponse.data).toString('base64')
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_')
+            .replace(/=/g, '');
+
+        console.log('[Main] Image converted successfully.');
+    } catch (imgError) {
+        console.error('[Main] Failed to download image:', imgError.message);
+        finalArticle.rawImageUrl = finalArticle.imageUrl;
+        finalArticle.b64ImageUrl = '';
+    }
+
+    // 8. Send to Make.com
+    console.log('[Webhook] Sending forced English article to Make.com...');
+    const success = await sendToWebhook(finalArticle);
+
+    if (success) {
+        console.log('[Main] Success! Forced English signal sent.');
+        await markAsSeen(best);
+    } else {
+        console.log('[Main] Failed to send.');
+    }
+}
+
+forceEnglishTest();

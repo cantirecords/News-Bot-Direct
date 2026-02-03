@@ -53,8 +53,7 @@ async function main() {
         // 5. Dynamic Title Prefix
         const ageMs = new Date() - new Date(best.pubDate);
         let timeLabel = '';
-        if (best.isEmergency) timeLabel = 'EMERGENCY ALERT';
-        else if (best.isTrending) timeLabel = 'CONFIRMED';
+        if (best.isTrending) timeLabel = 'CONFIRMED';
         else if (ageMs < 1200000) timeLabel = 'DEVELOPING';
         else if (ageMs < 3600000) timeLabel = 'JUST IN';
         else timeLabel = 'STORY UPDATE';
@@ -74,7 +73,7 @@ async function main() {
             cleanTitle = cleanTitle.slice(catUpper.length).replace(/^[ |📍:-]+/, '').trim();
         }
 
-        const badgeIcon = best.isEmergency ? '🔔' : best.isTrending ? '🔥' : '🚨';
+        const badgeIcon = best.isTrending ? '🔥' : '🚨';
         const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;
 
         finalArticle.title = `${badgeIcon} ${timeLabel} | ${locationPart} | ${cleanTitle}`;

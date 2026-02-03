@@ -108,30 +108,11 @@ export async function selectBestArticle(articles, targetLanguage) {
         // Penalty for repeating same source
         if (art.source === lastSource) finalScore -= 40;
 
-        // --- EMERGENCY DETECTION (Option 3) ---
-        const emergencyKeywords = ['raid', 'arrest', 'shutdown', 'order', 'emergency', 'alert', 'breaking', 'urgent', 'disaster', 'threat'];
-        const isUltraRecent = ageMs < 900000; // 15 minutes
-        let isEmergency = false;
-
-        if (isUltraRecent) {
-            for (const kw of emergencyKeywords) {
-                if (art.title.toLowerCase().includes(kw)) {
-                    isEmergency = true;
-                    finalScore += 500; // Priority Overdrive
-                    detection.category = 'EMERGENCY ALERT';
-                    detection.color = '#FF0000'; // Pure Red
-                    console.log(`[Selector] 🚨 EMERGENCY DETECTED: ${art.title.slice(0, 40)}`);
-                    break;
-                }
-            }
-        }
-
         candidates.push({
             ...art,
             category: detection.category,
             categoryColor: detection.color,
             isTrending: isTrending,
-            isEmergency: isEmergency,
             score: finalScore
         });
     }
