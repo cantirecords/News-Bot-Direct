@@ -45,12 +45,12 @@ export async function fetchNews() {
 
   let allArticles = [];
 
-  for (const source of sources) {
+  const results = await Promise.all(sources.map(async (source) => {
     try {
       console.log(`[Scraper] Fetching from ${source.name}...`);
       const feed = await parser.parseURL(source.url);
 
-      const articles = feed.items.slice(0, 15).map(item => {
+      return feed.items.slice(0, 15).map(item => {
         let imageUrl = null;
         if (item.mediaContent && item.mediaContent[0] && item.mediaContent[0].$) {
           imageUrl = item.mediaContent[0].$.url;
@@ -66,15 +66,14 @@ export async function fetchNews() {
           source: source.name,
           sourceType: source.category,
           originalLanguage: source.language,
-          imageUrl: imageUrl // This might be null or low res from RSS
+          imageUrl: imageUrl
         };
       });
-
-      allArticles = [...allArticles, ...articles];
     } catch (error) {
       console.error(`[Scraper] Error fetching from ${source.name}:`, error.message);
+      return [];
     }
-  }
+  }));
 
-  return allArticles;
+  return results.flat();
 }

@@ -1,8 +1,16 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const PRIORITY_CATEGORIES = (process.env.PRIORITY_CATEGORIES || '').split(',').map(k => k.trim().toLowerCase());
-const PRIORITY_STATES = (process.env.PRIORITY_STATES || '').split(',').map(k => k.trim().toLowerCase());
+export const PRIORITY_CATEGORIES = (process.env.PRIORITY_CATEGORIES || '').split(',').map(k => k.trim().toLowerCase());
+export const PRIORITY_STATES = (process.env.PRIORITY_STATES || '').split(',').map(k => k.trim().toLowerCase());
+
+export const GENERAL_TOPICS = [
+    'IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER',
+    'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH',
+    'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION',
+    'CLINTONS', 'CLINTON', 'BIDEN', 'HARRIS', 'DEMOCRATS', 'REPUBLICANS',
+    'WHITE HOUSE', 'SUPREME COURT', 'WORLD NEWS', 'ECONOMY', 'CRIME'
+];
 
 export function detectCategory(article) {
     const text = `${article.title} ${article.description}`.toLowerCase();

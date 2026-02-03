@@ -8,6 +8,7 @@ import { rewriteArticle } from './aiRewriter.js';
 import { translateArticle } from './translator.js';
 import { markAsSeen } from './deduplicator.js';
 import { sendToWebhook } from './webhook.js';
+import { GENERAL_TOPICS } from './categoryDetector.js';
 
 dotenv.config();
 
@@ -57,20 +58,14 @@ async function main() {
         else if (ageMs < 3600000) timeLabel = 'JUST IN';
         else timeLabel = 'STORY UPDATE';
 
-        const generalTopics = [
-            'IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER',
-            'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH',
-            'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION',
-            'CLINTONS', 'CLINTON', 'BIDEN', 'HARRIS', 'DEMOCRATS', 'REPUBLICANS',
-            'WHITE HOUSE', 'SUPREME COURT', 'WORLD NEWS', 'ECONOMY', 'CRIME'
-        ];
-        const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
+        const isSpecialLocation = !GENERAL_TOPICS.includes(finalArticle.category.toUpperCase());
 
-        // Anti-Repetition & Cleaning Title Logic (Strip AI Emojis/Prefixes)
+        // Anti-Repetition & Cleaning Title Logic (Aggressive Sanitization)
         let cleanTitle = finalArticle.title
-            .replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove all emojis
-            .replace(/^[ |📍:-]+/, '') // Remove leading symbols
+            .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '') // Multi-range emoji strip
+            .replace(/^[ |📍:🚨🔥-]+/, '') // Remove leading symbols including common ones AI likes
             .replace(/^[^|]+\|/, '') // Remove "CATEGORY |" prefixes if AI added any
+            .replace(/\s+/g, ' ') // Normalize spaces
             .trim();
 
         const catUpper = finalArticle.category.toUpperCase();

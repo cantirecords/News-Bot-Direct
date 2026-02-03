@@ -4,6 +4,7 @@ import { rewriteArticle } from './src/aiRewriter.js';
 import { sendToWebhook } from './src/webhook.js';
 import { selectBestArticle } from './src/selector.js';
 import { markAsSeen } from './src/deduplicator.js';
+import { GENERAL_TOPICS } from './src/categoryDetector.js';
 
 dotenv.config();
 
@@ -35,19 +36,13 @@ async function forceEnglishTest() {
     let timeLabel = (ageMs < 1200000) ? 'DEVELOPING' : (ageMs < 3600000) ? 'JUST IN' : 'STORY UPDATE';
 
     let cleanTitle = finalArticle.title
-        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
-        .replace(/^[ |📍:-]+/, '')
+        .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+        .replace(/^[ |📍:🚨🔥-]+/, '')
         .replace(/^[^|]+\|/, '')
+        .replace(/\s+/g, ' ')
         .trim();
 
-    const generalTopics = [
-        'IMMIGRATION', 'ICE', 'TRUMP', 'DEPORTATION', 'BORDER',
-        'BREAKING NEWS', 'POLITICS', 'LEGAL', 'SHOWDOWN', 'CLASH',
-        'BATTLE', 'EMERGENCY', 'GENERAL', 'HOUSE', 'CONGRESS', 'ELECTION',
-        'CLINTONS', 'CLINTON', 'BIDEN', 'HARRIS', 'DEMOCRATS', 'REPUBLICANS',
-        'WHITE HOUSE', 'SUPREME COURT', 'WORLD NEWS', 'ECONOMY', 'CRIME'
-    ];
-    const isSpecialLocation = !generalTopics.includes(finalArticle.category.toUpperCase());
+    const isSpecialLocation = !GENERAL_TOPICS.includes(finalArticle.category.toUpperCase());
 
     const badgeIcon = '🚨'; // Default for test
     const locationPart = isSpecialLocation ? `📍 ${finalArticle.category}` : finalArticle.category;

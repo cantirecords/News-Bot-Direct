@@ -122,14 +122,19 @@ export async function selectBestArticle(articles, targetLanguage) {
     // Sort by score descending
     candidates.sort((a, b) => b.score - a.score);
 
-    // Pick the winner
-    const best = candidates[0];
-
-    // Attempt to get high quality image if original is missing or from RSS
-    const hqImage = await getHighQualityImage(best.url);
-    if (hqImage) {
-        best.imageUrl = hqImage;
+    // Picking the winner with Image-First verification
+    const topCandidates = candidates.slice(0, 3);
+    for (const candidate of topCandidates) {
+        console.log(`[Selector] Probing HQ image for: ${candidate.title.slice(0, 40)}...`);
+        const hqImage = await getHighQualityImage(candidate.url);
+        if (hqImage) {
+            candidate.imageUrl = hqImage;
+            console.log(`[Selector] Winner found with HQ image: ${candidate.source}`);
+            return candidate;
+        }
     }
 
-    return best;
+    // Fallback to top candidate if no HQ image found in top 3
+    console.log(`[Selector] No HQ image found in top 3, falling back to top candidate.`);
+    return candidates[0];
 }
