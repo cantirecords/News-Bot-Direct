@@ -108,19 +108,26 @@ export async function selectBestArticle(articles, targetLanguage) {
         // Penalty for repeating same source
         if (art.source === lastSource) finalScore -= 40;
 
-        // --- EMERGENCY DETECTION (Option 3) ---
-        const emergencyKeywords = ['raid', 'arrest', 'shutdown', 'order', 'emergency', 'alert', 'breaking', 'urgent', 'disaster', 'threat'];
-        const isUltraRecent = ageMs < 900000; // 15 minutes
+        // --- 🚨 RED ALERT SYSTEM (Smart Frequency) ---
+        // Detects breaking news and publishes immediately, bypassing normal schedules
+        const emergencyKeywords = [
+            'raid', 'arrest', 'shutdown', 'order', 'emergency', 'alert', 'breaking', 'urgent',
+            'mass arrest', 'border shutdown', 'executive order', 'national emergency',
+            'disaster', 'threat', 'attack', 'shooting', 'explosion', 'crash', 'fire',
+            'evacuation', 'lockdown', 'manhunt', 'suspect', 'fugitive', 'warrant'
+        ];
+        const isUltraRecent = ageMs < 600000; // 10 minutes (more aggressive)
         let isEmergency = false;
 
         if (isUltraRecent) {
+            const titleLower = art.title.toLowerCase();
             for (const kw of emergencyKeywords) {
-                if (art.title.toLowerCase().includes(kw)) {
+                if (titleLower.includes(kw)) {
                     isEmergency = true;
-                    finalScore += 500; // Priority Overdrive
+                    finalScore += 1000; // MAXIMUM Priority - Always wins
                     detection.category = 'EMERGENCY ALERT';
                     detection.color = '#FF0000'; // Pure Red
-                    console.log(`[Selector] 🚨 EMERGENCY DETECTED: ${art.title.slice(0, 40)}`);
+                    console.log(`[Selector] 🚨 RED ALERT: ${art.title.slice(0, 40)}`);
                     break;
                 }
             }
