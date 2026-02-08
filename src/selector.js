@@ -19,9 +19,29 @@ export async function saveLastSource(source) {
     await fs.writeFile(STATE_FILE, JSON.stringify({ lastSource: source }, null, 2));
 }
 
+// Major U.S. Events that should be prioritized (updated periodically)
+const MAJOR_EVENTS = [
+    // Super Bowl 2026 (Feb 8, 2026)
+    'super bowl', 'patriots', 'seahawks', 'nfl championship', 'levi\'s stadium',
+    // Other major events (add as needed)
+    'presidential', 'election', 'state of the union', 'supreme court',
+    'national emergency', 'government shutdown'
+];
+
 function calculateScore(text, source) {
     let score = 50; // Base score
     const lowerText = text.toLowerCase();
+
+    // MAJOR EVENTS PRIORITY (Highest Boost)
+    let isMajorEvent = false;
+    for (const event of MAJOR_EVENTS) {
+        if (lowerText.includes(event)) {
+            score += 200; // Massive boost for major events
+            isMajorEvent = true;
+            console.log(`[Selector] Major Event Detected: "${event}" in "${text.slice(0, 50)}..."`);
+            break;
+        }
+    }
 
     // Priority Topics (Massive Boost)
     if (lowerText.includes('trump')) score += 100;
@@ -43,12 +63,14 @@ function calculateScore(text, source) {
     if (lowerText.includes('shoot') || lowerText.includes('kill') || lowerText.includes('dead')) score += 40;
     if (lowerText.includes('war') || lowerText.includes('attack')) score += 30;
 
-    // Penalty for Sports (unless it's a massive trend)
-    const sportsKeywords = ['nba', 'nfl', 'mlb', 'trading', 'player', 'cavaliers', 'kings', 'lakers', 'team', 'score', 'game', 'espn'];
-    for (const sport of sportsKeywords) {
-        if (lowerText.includes(sport)) {
-            score -= 150; // Heavy penalty for sports
-            break;
+    // Penalty for Sports (UNLESS it's a major event like Super Bowl)
+    if (!isMajorEvent) {
+        const sportsKeywords = ['nba', 'nfl', 'mlb', 'trading', 'player', 'cavaliers', 'kings', 'lakers', 'team', 'score', 'game', 'espn'];
+        for (const sport of sportsKeywords) {
+            if (lowerText.includes(sport)) {
+                score -= 150; // Heavy penalty for sports
+                break;
+            }
         }
     }
 

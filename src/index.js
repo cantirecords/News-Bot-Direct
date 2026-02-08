@@ -117,6 +117,11 @@ async function main() {
 
         finalArticle.description = finalDescription;
 
+        // Track the style used for analytics
+        if (finalArticle.styleUsed) {
+            console.log(`[Main] Article rewritten using style: ${finalArticle.styleUsed}`);
+        }
+
         try {
             console.log('[Main] Downloading image for Base64 conversion...');
             const imageResponse = await axios.get(finalArticle.imageUrl, { responseType: 'arraybuffer', timeout: 5000, headers: { 'User-Agent': 'Mozilla/5.0' } });
