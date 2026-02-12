@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.go.com/US/video/seahawks-meet-mouse-disneyland-130017982",
-    "title": "WATCH:  Seahawks meet a mouse at Disneyland",
-    "timestamp": "2026-02-10T10:00:05.127Z"
-  },
-  {
     "url": "https://www.foxnews.com/politics/senate-races-avert-third-shutdown-dhs-deal-takes-shape",
     "title": "Senate races to avert third shutdown as DHS deal takes shape",
     "timestamp": "2026-02-10T11:04:58.840Z"
@@ -163,5 +158,10 @@
     "url": "https://laopinion.com/2026/02/12/la-opinion-hoy-gobierno-de-trump-recortara-600-millones-en-fondos-federales-de-salud-publica-a-estados-democratas/",
     "title": "La Opinión Hoy: Gobierno de Trump recortará $600 millones en fondos federales de salud pública a estados demócratas",
     "timestamp": "2026-02-12T09:49:05.100Z"
+  },
+  {
+    "url": "https://nypost.com/2026/02/12/us-news/tulsi-gabbard-ends-task-force-that-aimed-to-reform-intelligence-gathering-after-less-than-a-year/",
+    "title": "Tulsi Gabbard ends task force that aimed to reform intelligence gathering after less than a year",
+    "timestamp": "2026-02-12T10:43:51.693Z"
   }
 ]
