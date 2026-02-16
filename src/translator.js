@@ -3,7 +3,18 @@ import fs from 'fs/promises';
 import path from 'path';
 import Groq from 'groq-sdk';
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+let groq;
+try {
+    if (process.env.GROQ_API_KEY) {
+        groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+    } else {
+        if (process.env.GITHUB_ACTIONS) {
+            console.warn('[Translator] Warning: GROQ_API_KEY missing. AI fallback disabled.');
+        }
+    }
+} catch (error) {
+    console.error('[Translator] Failed to initialize Groq client:', error.message);
+}
 const CACHE_FILE = path.resolve(process.cwd(), 'data/translation_cache.json');
 
 async function loadCache() {
@@ -61,6 +72,7 @@ export async function translateArticle(article, targetLang = 'es') {
         console.error('[Translator] Google Translate failed, falling back to Groq AI:', error.message);
 
         try {
+            if (!groq) throw new Error("Groq client not initialized (missing API key)");
             const models = [
                 'llama-3.3-70b-versatile',
                 'llama-3.1-70b-versatile',

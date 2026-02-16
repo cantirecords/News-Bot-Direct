@@ -2,9 +2,21 @@ import Groq from 'groq-sdk';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY
-});
+let groq;
+try {
+  if (process.env.GROQ_API_KEY) {
+    groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY
+    });
+  } else {
+    // Only warn if running in GitHub Actions to avoid noise locally if using .env
+    if (process.env.GITHUB_ACTIONS) {
+      console.warn('[AI-Rewriter] Warning: GROQ_API_KEY missing. AI features disabled.');
+    }
+  }
+} catch (error) {
+  console.error('[AI-Rewriter] Failed to initialize Groq client:', error.message);
+}
 
 // Writing Styles for Variety
 const WRITING_STYLES = {
@@ -164,7 +176,7 @@ function selectStyle(articleTitle) {
 }
 
 export async function rewriteArticle(article, clickbaitLevel = 'medium') {
-  if (process.env.AI_REWRITE_ENABLED !== 'true') return article;
+  if (process.env.AI_REWRITE_ENABLED !== 'true' || !groq) return article;
 
   if (process.env.GITHUB_ACTIONS && !process.env.GROQ_API_KEY) {
     console.error('[AI-Rewriter] CRITICAL: GROQ_API_KEY is missing in GitHub Secrets! AI rewrite will be skipped.');
