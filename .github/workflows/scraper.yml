@@ -20,10 +20,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+
+      - name: Debug Environment
+        run: |
+          node -v
+          npm -v
+          ls -R
+        shell: bash
 
       - name: Install Dependencies
         run: npm install
+        shell: bash
 
       - name: Run Scraper
         env:
@@ -36,17 +43,18 @@ jobs:
           PRIORITY_CATEGORIES: Immigration,ICE,Trump,BreakingNews,Border,Deportation,Politics,Legal
           PRIORITY_STATES: Texas,Florida,NewYork,California,Arizona,Georgia,Pennsylvania,Ohio,Michigan
         run: npm start
+        shell: bash
 
       - name: Commit Tracking Data
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/*.json
+          git add data/*.json || true
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update tracking data [skip ci]"
-            # Pull latest changes to avoid conflicts, then push
             git pull --rebase origin main || git rebase --abort
             git push origin main
           else
             echo "No changes to commit"
           fi
+        shell: bash
