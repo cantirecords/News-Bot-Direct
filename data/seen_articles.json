@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/02/15/us-news/small-plane-crashes-in-ventura-county-injuring-two/",
-    "title": "Small plane crashes in Ventura County as two pulled from wreckage",
-    "timestamp": "2026-02-16T03:46:01.709Z"
-  },
-  {
     "url": "https://www.foxnews.com/world/2-skiers-killed-avalanche-popular-mont-blanc-skiing-route-near-french-swiss-border",
     "title": "2 skiers killed in avalanche on popular Mont Blanc skiing route near French-Swiss border",
     "timestamp": "2026-02-16T04:57:47.541Z"
@@ -193,5 +188,10 @@
     "url": "https://www.foxnews.com/us/palestinian-activist-accused-expressing-desire-kill-jews-wins-deportation-case",
     "title": "Palestinian activist accused of expressing desire to 'kill Jews' wins deportation case",
     "timestamp": "2026-02-18T02:04:48.956Z"
+  },
+  {
+    "url": "https://nypost.com/2026/02/17/media/obama-eviscerated-after-latest-update-to-dour-presidential-center-gives-locals-a-headache/",
+    "title": "Obama eviscerated after latest update to dour presidential center gives locals ‘a headache’",
+    "timestamp": "2026-02-18T04:52:02.003Z"
   }
 ]
