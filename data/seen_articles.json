@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.go.com/US/colorado-multi-vehicle-crash-I-25-pueblo/story?id=130243577",
-    "title": " 4 dead in pile-up crash involving over 30 vehicles, including multiple semis: Police",
-    "timestamp": "2026-02-17T20:36:14.731Z"
-  },
-  {
     "url": "https://www.foxnews.com/us/dna-found-glove-near-nancy-guthries-home-inside-residence-yields-no-match-fbi-database-sheriff",
     "title": "DNA found on glove near Nancy Guthrie's home, inside residence, yields no match in FBI database: sheriff",
     "timestamp": "2026-02-17T21:34:50.079Z"
@@ -188,5 +183,10 @@
     "url": "https://nypost.com/2026/02/19/us-news/trump-expresses-sympathy-for-ex-prince-andrew-after-dramatic-arrest-in-epstein-saga/",
     "title": "Trump expresses sympathy for the royal family as ex-Prince Andrew is arrested in Epstein saga",
     "timestamp": "2026-02-19T20:30:59.294Z"
+  },
+  {
+    "url": "https://laopinion.com/2026/02/19/agente-del-sheriff-de-miami-dade-arrestado-por-contacto-sexual-con-quien-creyo-era-una-adolescente-de-15-anos/",
+    "title": "Agente del Sheriff de Miami-Dade arrestado por contacto sexual con quien creyó era una adolescente de 15 años",
+    "timestamp": "2026-02-19T21:30:54.929Z"
   }
 ]
