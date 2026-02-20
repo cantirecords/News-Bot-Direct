@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/02/18/us-news/bomb-cyclone-could-hit-nyc-this-weekend-and-bring-another-foot-of-snow/",
-    "title": "Powerful ‘bomb cyclone’ could hit NYC this weekend — threatening up to another foot of snow",
-    "timestamp": "2026-02-18T18:53:43.806Z"
-  },
-  {
     "url": "https://www.foxnews.com/media/jasmine-crockett-pushes-back-texas-opponents-claim-trump-fcc-killed-interview-puts-blame-cbs",
     "title": "Jasmine Crockett pushes back on Texas opponent's claim Trump FCC killed interview, puts blame on CBS",
     "timestamp": "2026-02-18T19:47:20.595Z"
@@ -198,5 +193,10 @@
     "url": "https://nypost.com/2026/02/20/us-news/trump-rips-supreme-court-justices-for-tariff-ruling-unpatriotic-and-disloyal-to-our-constitution/",
     "title": "Trump goes on blistering attack against Supreme Court justices after tariff ruling: ‘Unpatriotic and disloyal to our Constitution’",
     "timestamp": "2026-02-20T18:44:15.392Z"
+  },
+  {
+    "url": "https://abcnews.com/Politics/trump-outlines-new-plan-tariffs-after-deeply-disappointing/story?id=130338220",
+    "title": " Trump outlines new plan for tariffs after 'deeply disappointing' Supreme Court ruling",
+    "timestamp": "2026-02-20T19:36:04.439Z"
   }
 ]
