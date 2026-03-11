@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/09/us-news/pennsylvania-state-trooper-timothy-oconnor-fatally-shot-during-traffic-stop-officials-say/",
-    "title": "Pennsylvania state trooper fatally shot during traffic stop, officials say",
-    "timestamp": "2026-03-09T08:42:14.260Z"
-  },
-  {
     "url": "https://www.foxnews.com/opinion/all-4-iran-war-assumptions-dead-wrong-trump-proves-experts-got-fooled-again",
     "title": "All 4 Iran war assumptions dead wrong — Trump proves experts got fooled again",
     "timestamp": "2026-03-09T09:50:52.455Z"
@@ -198,5 +193,10 @@
     "url": "https://nypost.com/2026/03/11/world-news/6-dead-in-switzerland-bus-fire-police-suspect-arson/",
     "title": "Horror Switzerland bus fire kills 6, injures 5 as police probe possible deliberate act",
     "timestamp": "2026-03-11T08:39:11.185Z"
+  },
+  {
+    "url": "https://www.foxnews.com/opinion/trump-ends-bidens-drug-price-nightmare-americans-get-real-relief-trumprx",
+    "title": "Trump ends Biden’s drug price nightmare — Americans get real relief with TrumpRx",
+    "timestamp": "2026-03-11T09:41:04.313Z"
   }
 ]
