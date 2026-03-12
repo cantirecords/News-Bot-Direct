@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/10/sports/alijah-vera-tucker-signing-with-patriots-after-injury-plagued-jets-tenure/",
-    "title": "Alijah Vera-Tucker signing with Patriots after injury-plagued Jets tenure",
-    "timestamp": "2026-03-10T06:47:09.180Z"
-  },
-  {
     "url": "https://www.foxnews.com/media/war-hits-home-why-financial-pain-economic-uncertainty-threaten-trumps-drive-topple-irans-regime",
     "title": "The war hits home: Why financial pain and economic uncertainty threaten Trump’s drive to topple Iran’s regime",
     "timestamp": "2026-03-10T07:39:42.027Z"
@@ -193,5 +188,10 @@
     "url": "https://nypost.com/2026/03/12/us-news/iran-linked-hacker-group-launches-debilitating-cyberattack-against-us-medical-company/",
     "title": "Iran-linked hacker group launches debilitating cyberattack against US medical company",
     "timestamp": "2026-03-12T05:50:30.702Z"
+  },
+  {
+    "url": "https://www.nbcnews.com/world/iran/iran-appears-conducted-significant-cyberattack-us-company-first-war-st-rcna263084",
+    "title": "Iran appears to have conducted a significant cyberattack against a U.S. company",
+    "timestamp": "2026-03-12T06:54:08.201Z"
   }
 ]
