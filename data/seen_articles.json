@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/Politics/trump-live-final-us-report-deadly-missile-strike/story?id=130916651",
-    "title": " Trump 'willing to live with' US report on missile strike on Iranian girls' school",
-    "timestamp": "2026-03-10T05:43:56.400Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/10/sports/alijah-vera-tucker-signing-with-patriots-after-injury-plagued-jets-tenure/",
     "title": "Alijah Vera-Tucker signing with Patriots after injury-plagued Jets tenure",
     "timestamp": "2026-03-10T06:47:09.180Z"
@@ -193,5 +188,10 @@
     "url": "https://www.foxnews.com/politics/unprecedented-agreement-releases-emergency-oil-reserves-gas-prices-spark-concerns",
     "title": "'Unprecedented' agreement releases emergency oil reserves as gas prices spark concerns",
     "timestamp": "2026-03-12T04:45:55.594Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/12/us-news/iran-linked-hacker-group-launches-debilitating-cyberattack-against-us-medical-company/",
+    "title": "Iran-linked hacker group launches debilitating cyberattack against US medical company",
+    "timestamp": "2026-03-12T05:50:30.702Z"
   }
 ]
