@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/International/live-updates/iran-live-updates/?id=130893022",
-    "title": " Iran live updates: Trump says war will be 'ended soon'",
-    "timestamp": "2026-03-10T08:40:11.719Z"
-  },
-  {
     "url": "https://www.foxnews.com/travel/dhs-shutdown-forces-airports-tell-travelers-arrive-4-hours-early-amid-massive-delays",
     "title": "DHS shutdown forces airports to tell travelers to arrive 4 hours early amid massive delays",
     "timestamp": "2026-03-10T09:42:07.129Z"
@@ -193,5 +188,10 @@
     "url": "https://nypost.com/2026/03/12/us-news/mma-trained-teen-subdues-ax-wielding-man-at-florida-car-wash/",
     "title": "Ax-wielding suspect subdued by teen military recruit’s MMA takedown in car wash clash caught on video",
     "timestamp": "2026-03-12T07:45:00.204Z"
+  },
+  {
+    "url": "https://www.foxnews.com/media/trump-suddenly-seems-anxious-end-war-american-casualties-mount-iran-finds-ways-hit-back",
+    "title": "Trump suddenly seems anxious to end the war as American casualties mount and Iran finds ways to hit back",
+    "timestamp": "2026-03-12T08:40:20.004Z"
   }
 ]
