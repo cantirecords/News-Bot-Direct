@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/ntsb-zeroes-cause-helicopter-crash-killed-2-officers",
-    "title": "NTSB zeroes in on cause of helicopter crash that killed 2 officers",
-    "timestamp": "2026-03-11T12:57:46.066Z"
-  },
-  {
     "url": "https://www.foxnews.com/politics/texas-conservatives-tout-record-breaking-school-choice-signups-after-long-battle-teachers-unions",
     "title": "Texas conservatives tout record-breaking school choice signups after long battle with teachers unions",
     "timestamp": "2026-03-11T14:07:49.386Z"
@@ -198,5 +193,10 @@
     "url": "https://www.foxnews.com/travel/famous-volcano-blasts-lava-1000-feet-high-triggering-emergency-closures-national-park",
     "title": "Famous volcano blasts lava 1,000 feet high, triggering emergency closures at national park",
     "timestamp": "2026-03-13T12:56:03.731Z"
+  },
+  {
+    "url": "https://abcnews.com/US/suspect-michigan-synagogue-attack-lost-family-israeli-strike/story?id=131031752",
+    "title": " Suspect in Michigan synagogue attack lost family in Israeli strike on Lebanon: Mayor",
+    "timestamp": "2026-03-13T14:00:38.695Z"
   }
 ]
