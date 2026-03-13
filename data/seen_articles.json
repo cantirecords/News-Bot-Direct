@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/health/male-fertility-rates-crash-doctors-reveal-health-threats-something-very-wrong",
-    "title": "Male fertility rates crash as doctors reveal health threats: 'Something very wrong'",
-    "timestamp": "2026-03-11T10:37:34.640Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/11/us-news/ex-ohio-state-president-may-have-given-podcaster-cozy-on-campus-office-reports/",
     "title": "Ex-Ohio State president Ted Carter may have given podcaster at center of ‘inappropriate relationship’ cozy on-campus office: reports",
     "timestamp": "2026-03-11T11:32:18.122Z"
@@ -198,5 +193,10 @@
     "url": "https://www.foxnews.com/politics/us-kc135-crash-iraq-us-service-members-killed",
     "title": "4 US service members killed in refueling aircraft crash in Iraq",
     "timestamp": "2026-03-13T10:35:21.796Z"
+  },
+  {
+    "url": "https://www.foxnews.com/media/anthropics-political-footprint-emerges-after-trump-blacklisting",
+    "title": "Anthropic's Democratic ties under fire as Trump admin severs Pentagon contracts",
+    "timestamp": "2026-03-13T11:30:14.629Z"
   }
 ]
