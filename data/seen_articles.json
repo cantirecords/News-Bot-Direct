@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/politics/unprecedented-agreement-releases-emergency-oil-reserves-gas-prices-spark-concerns",
-    "title": "'Unprecedented' agreement releases emergency oil reserves as gas prices spark concerns",
-    "timestamp": "2026-03-12T04:45:55.594Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/12/us-news/iran-linked-hacker-group-launches-debilitating-cyberattack-against-us-medical-company/",
     "title": "Iran-linked hacker group launches debilitating cyberattack against US medical company",
     "timestamp": "2026-03-12T05:50:30.702Z"
@@ -198,5 +193,10 @@
     "url": "https://www.foxnews.com/politics/cuban-president-admits-talks-trump-admin-fuel-blockade-chokes-domestic-energy-supply-economy",
     "title": "Cuban president reveals talks with Trump admin as fuel blockade chokes domestic energy supply and economy",
     "timestamp": "2026-03-14T04:11:13.484Z"
+  },
+  {
+    "url": "https://abcnews.com/US/palestinian-woman-ordered-released-ice-detention-3rd-time/story?id=131046935",
+    "title": " Woman ordered released from ICE detention for 3rd time but may remain detained",
+    "timestamp": "2026-03-14T05:43:41.922Z"
   }
 ]
