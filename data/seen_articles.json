@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/12/us-news/iran-linked-hacker-group-launches-debilitating-cyberattack-against-us-medical-company/",
-    "title": "Iran-linked hacker group launches debilitating cyberattack against US medical company",
-    "timestamp": "2026-03-12T05:50:30.702Z"
-  },
-  {
     "url": "https://www.nbcnews.com/world/iran/iran-appears-conducted-significant-cyberattack-us-company-first-war-st-rcna263084",
     "title": "Iran appears to have conducted a significant cyberattack against a U.S. company",
     "timestamp": "2026-03-12T06:54:08.201Z"
@@ -198,5 +193,10 @@
     "url": "https://abcnews.com/US/palestinian-woman-ordered-released-ice-detention-3rd-time/story?id=131046935",
     "title": " Woman ordered released from ICE detention for 3rd time but may remain detained",
     "timestamp": "2026-03-14T05:43:41.922Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/14/us-news/california-man-idress-solomon-accused-of-attacking-tsa-officers-seriously-injuring-dallas-cop-at-airport/",
+    "title": "California traveler accused of attacking TSA officers, seriously injuring Dallas cop at airport",
+    "timestamp": "2026-03-14T06:43:00.740Z"
   }
 ]
