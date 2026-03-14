@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/US/active-shooter-reported-synagogue-west-bloomfield-michigan-sheriff/story?id=131007066",
-    "title": " Suspect dead after ramming truck into Detroit-area synagogue: Sheriff",
-    "timestamp": "2026-03-12T18:52:39.482Z"
-  },
-  {
     "url": "https://abcnews.com/International/live-updates/iran-live-updates/?id=130893022",
     "title": " Iran live updates: 1st purported message from new supreme leader read on state TV",
     "timestamp": "2026-03-12T19:41:14.143Z"
@@ -208,5 +203,10 @@
     "url": "https://pagesix.com/2026/03/14/parents/mariah-carey-crashes-sons-twitch-livestream-again/",
     "title": "Mariah Carey crashes son’s Twitch livestream again 1 year after embarrassing him with surprise cameo",
     "timestamp": "2026-03-14T18:37:00.845Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/14/us-news/son-carries-on-dads-nypd-bomb-squad-legacy-at-gracie-attack/",
+    "title": "Son carries on dad’s NYPD Bomb Squad legacy at Gracie attack",
+    "timestamp": "2026-03-14T19:25:20.731Z"
   }
 ]
