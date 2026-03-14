@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/International/live-updates/iran-live-updates/?id=130893022",
-    "title": " Iran live updates: 1st purported message from new supreme leader read on state TV",
-    "timestamp": "2026-03-12T19:41:14.143Z"
-  },
-  {
     "url": "https://pagesix.com/2026/03/12/celebrity-news/billy-joels-daughter-gives-health-update-on-singer-after-scary-brain-disorder/",
     "title": "Billy Joel’s daughter gives health update on singer after ‘scary’ brain disorder",
     "timestamp": "2026-03-12T20:33:24.416Z"
@@ -208,5 +203,10 @@
     "url": "https://nypost.com/2026/03/14/us-news/son-carries-on-dads-nypd-bomb-squad-legacy-at-gracie-attack/",
     "title": "Son carries on dad’s NYPD Bomb Squad legacy at Gracie attack",
     "timestamp": "2026-03-14T19:25:20.731Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/14/us-news/defused-federal-classes-on-preventing-deadly-ieds-cancelled-during-shutdown/",
+    "title": "Class teaching first responders how to defuse deadly IEDs loses funds as government shutdown lingers on",
+    "timestamp": "2026-03-14T20:26:39.928Z"
   }
 ]
