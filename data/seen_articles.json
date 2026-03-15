@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/politics/us-kc135-crash-iraq-us-service-members-killed",
-    "title": "4 US service members killed in refueling aircraft crash in Iraq",
-    "timestamp": "2026-03-13T10:35:21.796Z"
-  },
-  {
     "url": "https://www.foxnews.com/media/anthropics-political-footprint-emerges-after-trump-blacklisting",
     "title": "Anthropic's Democratic ties under fire as Trump admin severs Pentagon contracts",
     "timestamp": "2026-03-13T11:30:14.629Z"
@@ -203,5 +198,10 @@
     "url": "https://www.foxnews.com/sports/venezuela-japan-wbc-quarterfinal-upset",
     "title": "Japan suffers shocking collapse to Venezuela in World Baseball Classic",
     "timestamp": "2026-03-15T10:27:52.622Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/15/sports/breaking-down-all-angles-storylines-heading-into-selection-sunday/",
+    "title": "Breaking down all angles, storylines heading into Selection Sunday",
+    "timestamp": "2026-03-15T11:24:27.490Z"
   }
 ]
