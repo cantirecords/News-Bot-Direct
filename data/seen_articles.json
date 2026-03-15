@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/travel/famous-volcano-blasts-lava-1000-feet-high-triggering-emergency-closures-national-park",
-    "title": "Famous volcano blasts lava 1,000 feet high, triggering emergency closures at national park",
-    "timestamp": "2026-03-13T12:56:03.731Z"
-  },
-  {
     "url": "https://abcnews.com/US/suspect-michigan-synagogue-attack-lost-family-israeli-strike/story?id=131031752",
     "title": " Suspect in Michigan synagogue attack lost family in Israeli strike on Lebanon: Mayor",
     "timestamp": "2026-03-13T14:00:38.695Z"
@@ -203,5 +198,10 @@
     "url": "https://www.foxnews.com/world/trump-seeks-warships-from-other-countries-help-secure-strait-hormuz",
     "title": "Trump seeks warships from other countries to help secure Strait of Hormuz",
     "timestamp": "2026-03-15T12:51:13.797Z"
+  },
+  {
+    "url": "https://www.foxnews.com/politics/pentagon-identifies-6-us-airmen-killed-refueling-tanker-crash-iraq-after-mid-air-collision",
+    "title": "Pentagon identifies 6 US airmen killed in refueling tanker crash in Iraq after mid-air collision",
+    "timestamp": "2026-03-15T13:46:30.856Z"
   }
 ]
