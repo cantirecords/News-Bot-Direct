@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/california-shooting-leaves-2-deputies-utility-worker-injured-suspect-also-shot-officials",
-    "title": "California shootings leave 2 deputies, utility worker injured; suspect also shot: officials",
-    "timestamp": "2026-03-13T04:18:33.163Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/13/us-news/brazen-robbery-crew-storms-california-jewelry-store-steals-1-7m-in-just-70-seconds-video/",
     "title": "Terrifying moment gang raids jewelry store for $1.7M in one minute",
     "timestamp": "2026-03-13T05:48:01.659Z"
@@ -203,5 +198,10 @@
     "url": "https://abcnews.com/International/4-dead-after-us-refueling-aircraft-western-iraq/story?id=131031069",
     "title": " Pentagon identifies 6 Air Force airmen killed in KC-135 refueling aircraft crash",
     "timestamp": "2026-03-15T02:12:49.474Z"
+  },
+  {
+    "url": "https://www.foxnews.com/sports/seahawks-gm-warns-washingtons-new-millionaire-tax-could-hurt-free-agent-recruiting",
+    "title": "Seahawks GM warns Washington’s new 'millionaire tax' could hurt free agent recruiting",
+    "timestamp": "2026-03-15T05:04:04.863Z"
   }
 ]
