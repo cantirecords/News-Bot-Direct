@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/media/trump-admin-says-theres-a-very-good-chance-gas-prices-back-normal-su",
-    "title": "Trump admin official says there’s a 'very good chance' gas prices will be back to normal by summer",
-    "timestamp": "2026-03-16T16:11:38.822Z"
-  },
-  {
     "url": "https://www.foxnews.com/us/violent-dc-teen-takeover-upscale-neighborhood-escalates-gunfire",
     "title": "Violent DC teen takeover in upscale neighborhood escalates to gunfire",
     "timestamp": "2026-03-16T17:59:11.496Z"
@@ -168,5 +163,10 @@
     "url": "https://nypost.com/2026/03/18/real-estate/heres-what-your-neighborhood-grocery-store-means-for-home-prices/",
     "title": "Trader Joe’s vs. Walmart: Here’s what your neighborhood grocery store means for home prices",
     "timestamp": "2026-03-18T15:01:32.903Z"
+  },
+  {
+    "url": "https://www.foxnews.com/us/homeless-man-charged-attacking-san-francisco-mayors-security-detail-arrested-again-days-after-release",
+    "title": "Homeless man charged with attacking San Francisco mayor’s security detail arrested again days after release",
+    "timestamp": "2026-03-18T16:58:05.096Z"
   }
 ]
