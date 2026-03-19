@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/sports/iranian-womens-soccer-players-practice-australian-club-after-being-granted-asylum",
-    "title": "Iranian women's soccer players practice with Australian club after being granted asylum",
-    "timestamp": "2026-03-17T11:42:28.072Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/17/world-news/four-teens-arrested-in-dutch-synagogue-explosion/",
     "title": "Four teens arrested in Dutch synagogue explosion as new terror group claims responsibility",
     "timestamp": "2026-03-17T13:09:22.575Z"
@@ -173,5 +168,10 @@
     "url": "https://www.nbcnews.com/world/iran/iran-war-gas-field-attacks-energy-prices-trump-israel-south-pars-rcna264249",
     "title": "Iran war escalation sets key gas sites, and the world's energy prices, ablaze",
     "timestamp": "2026-03-19T11:34:46.336Z"
+  },
+  {
+    "url": "https://www.foxnews.com/politics/trump-threatens-key-iranian-gas-field-after-israeli-strike",
+    "title": "Trump threatens key Iranian gas field after Israeli strike",
+    "timestamp": "2026-03-19T13:02:26.579Z"
   }
 ]
