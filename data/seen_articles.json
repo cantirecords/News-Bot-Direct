@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/17/world-news/four-teens-arrested-in-dutch-synagogue-explosion/",
-    "title": "Four teens arrested in Dutch synagogue explosion as new terror group claims responsibility",
-    "timestamp": "2026-03-17T13:09:22.575Z"
-  },
-  {
     "url": "https://abcnews.com/Politics/top-trump-counterterror-adviser-resigns-iran-war-imminent/story?id=131147889",
     "title": " Top Trump counterterror adviser resigns over Iran war: 'No imminent threat'",
     "timestamp": "2026-03-17T14:55:04.601Z"
@@ -173,5 +168,10 @@
     "url": "https://www.foxnews.com/politics/trump-threatens-key-iranian-gas-field-after-israeli-strike",
     "title": "Trump threatens key Iranian gas field after Israeli strike",
     "timestamp": "2026-03-19T13:02:26.579Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/19/us-news/spring-break-travelers-face-hourslong-airport-security-lines-risk-of-airport-closures-with-no-end-in-sight-for-dem-dhs-shutdown/",
+    "title": "Spring break travelers face hourslong airport security lines, risk of airport closures with no end in sight for Dem DHS shutdown",
+    "timestamp": "2026-03-19T14:45:08.115Z"
   }
 ]
