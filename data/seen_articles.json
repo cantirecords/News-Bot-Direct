@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.cnn.com/business/live-news/fox-news-dominion-trial-04-18-23/h_8d51e3ae2714edaa0dace837305d03b8",
-    "title": "Dominion still has pending lawsuits against election deniers such as Rudy Giuliani and Sidney Powell",
-    "timestamp": "2026-03-18T08:48:31.592Z"
-  },
-  {
     "url": "https://abcnews.com/Business/fed-set-adjust-interest-rates-1st-time-war/story?id=131155455",
     "title": " Fed set to adjust interest rates for 1st time since war with Iran spiked oil prices",
     "timestamp": "2026-03-18T09:53:46.977Z"
@@ -183,5 +178,10 @@
     "url": "https://www.nbcnews.com/nightly-news/video/missing-american-student-found-dead-in-spain-259616837997",
     "title": "Missing American student found dead in Spain",
     "timestamp": "2026-03-20T08:38:50.384Z"
+  },
+  {
+    "url": "https://www.foxnews.com/opinion/not-just-tariffs-foreign-nations-profited-off-us-now-trump-striking-back",
+    "title": "Not just tariffs: Foreign nations profited off of us — now Trump is striking back",
+    "timestamp": "2026-03-20T09:39:27.832Z"
   }
 ]
