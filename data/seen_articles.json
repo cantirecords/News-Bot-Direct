@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/nypd-officer-mamdani-security-bronx-shooting",
-    "title": "NYPD officer assigned to Mayor Mamdani’s security suspended after off-duty shooting",
-    "timestamp": "2026-03-19T08:40:16.687Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/19/world-news/james-graceys-frat-brother-recalls-last-moments-before-alabama-students-disappearance-in-barcelona/",
     "title": "Missing University of Alabama student James Gracey’s frat brother recalls last moments before disappearance in Barcelona",
     "timestamp": "2026-03-19T09:41:31.265Z"
@@ -198,5 +193,10 @@
     "url": "https://nypost.com/2026/03/21/sports/karl-anthony-towns-listens-to-fathers-advice-and-suits-up-for-win/",
     "title": "Karl-Anthony Towns listens to recovering father’s advice and suits up for win",
     "timestamp": "2026-03-21T08:31:46.904Z"
+  },
+  {
+    "url": "https://www.foxnews.com/politics/dhs-shutdown-blows-past-one-month-democrats-push-carve-out-ice-new-funding-deal",
+    "title": "DHS shutdown blows past one-month mark as Dems push to carve out ICE from any new funding deal",
+    "timestamp": "2026-03-21T09:30:28.131Z"
   }
 ]
