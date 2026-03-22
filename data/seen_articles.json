@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.nbcnews.com/nightly-news/video/missing-american-student-found-dead-in-spain-259616837997",
-    "title": "Missing American student found dead in Spain",
-    "timestamp": "2026-03-20T08:38:50.384Z"
-  },
-  {
     "url": "https://www.foxnews.com/opinion/not-just-tariffs-foreign-nations-profited-off-us-now-trump-striking-back",
     "title": "Not just tariffs: Foreign nations profited off of us — now Trump is striking back",
     "timestamp": "2026-03-20T09:39:27.832Z"
@@ -208,5 +203,10 @@
     "url": "https://abcnews.com/US/wireStory/multiple-people-injured-after-floor-collapses-new-hampshire-131295087",
     "title": " Multiple people injured after floor collapses at New Hampshire wedding venue",
     "timestamp": "2026-03-22T08:33:09.037Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/22/us-news/houston-woman-sherrie-james-claims-suspected-meteorite-smashed-into-house-after-blast-rattles-residents/",
+    "title": "Houston woman claims suspected meteorite smashed into house after blast rattles residents",
+    "timestamp": "2026-03-22T09:31:12.278Z"
   }
 ]
