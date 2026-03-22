@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/missing-university-alabama-student-jimmy-gracey-found-dead-barcelona",
-    "title": "Missing University of Alabama student Jimmy Gracey found dead in Barcelona",
-    "timestamp": "2026-03-20T06:53:40.478Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/20/world-news/denmark-prepared-to-blow-up-greenland-runways-to-stop-us-aircraft-report/",
     "title": "Denmark secretly prepared to blow up Greenland’s runways to stop US aircraft: report",
     "timestamp": "2026-03-20T07:44:47.572Z"
@@ -208,5 +203,10 @@
     "url": "https://nypost.com/2026/03/22/us-news/new-hampshire-floor-collapse-at-wedding-injures-6-in-tamworth/",
     "title": "Floor collapse at New Hampshire wedding venue leaves 6 injured, investigation underway",
     "timestamp": "2026-03-22T06:50:34.372Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/22/us-news/seattle-man-cordell-goosby-found-not-guilty-by-insanity-in-pregnant-eina-kwon-shooting/",
+    "title": "Seattle gunman found not guilty by reason of insanity in killing of pregnant woman, unborn child",
+    "timestamp": "2026-03-22T07:37:16.271Z"
   }
 ]
