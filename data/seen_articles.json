@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/politics/dhs-shutdown-blows-past-one-month-democrats-push-carve-out-ice-new-funding-deal",
-    "title": "DHS shutdown blows past one-month mark as Dems push to carve out ICE from any new funding deal",
-    "timestamp": "2026-03-21T09:30:28.131Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/21/world-news/iran-says-its-natanz-nuclear-facility-has-been-hit-in-airstrike-as-war-enters-fourth-week/",
     "title": "Iran says its Natanz nuclear facility has been hit in airstrike as war enters fourth week",
     "timestamp": "2026-03-21T10:25:02.907Z"
@@ -188,5 +183,10 @@
     "url": "https://abcnews.com/International/live-updates/iran-live-updates-trumps-48-hour-deadline-expire/?id=131316431",
     "title": " Iran live updates: Trump's 48-hour deadline to expire Monday evening",
     "timestamp": "2026-03-23T08:54:12.843Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/23/world-news/iran-threatens-to-start-hitting-gulf-power-plants-and-mine-waters-as-israel-launches-new-attacks/",
+    "title": "Iran threatens to start hitting Gulf power plants and mine waters as Israel launches new attacks",
+    "timestamp": "2026-03-23T10:01:38.701Z"
   }
 ]
