@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/politics/pence-trump-upended-some-aspects-gop-agenda-hasnt-really-changed-republican-party",
-    "title": "Pence: Trump upended ‘some aspects’ of GOP agenda but ‘hasn't really changed the Republican Party’",
-    "timestamp": "2026-03-22T10:26:17.430Z"
-  },
-  {
     "url": "https://www.nbcnews.com/world/russia/russia-killing-telegram-popular-messaging-app-fears-pushback-rcna263904",
     "title": "Russia is killing Telegram, its most popular messaging app, despite fears of pushback",
     "timestamp": "2026-03-22T11:22:21.427Z"
@@ -168,5 +163,10 @@
     "url": "https://www.foxnews.com/sports/syracuse-coach-calls-ncaa-bracket-placement-personal-attack-after-third-straight-tournament-loss-uconn",
     "title": "Syracuse coach calls NCAA bracket placement a 'personal attack' after third straight tournament loss to UConn",
     "timestamp": "2026-03-24T09:54:53.741Z"
+  },
+  {
+    "url": "https://abcnews.com/Politics/trump-blocks-asylum-seekers-supreme-court-decide-us/story?id=131189496",
+    "title": " As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
+    "timestamp": "2026-03-24T10:51:23.587Z"
   }
 ]
