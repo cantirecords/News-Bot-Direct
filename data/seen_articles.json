@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/22/us-news/trump-deploying-ice-to-airports-on-monday-to-ease-crowded-tsa-lines/",
-    "title": "Trump deploying ICE to airports on Monday to ease crowded TSA lines — as NYC travelers face security line hell",
-    "timestamp": "2026-03-22T13:42:35.360Z"
-  },
-  {
     "url": "https://www.foxnews.com/politics/california-sheriff-seizes-650000-ballots-defiance-state-officials-over-election-count-dispute",
     "title": "California sheriff seizes 650,000 ballots in defiance of state officials over election count dispute",
     "timestamp": "2026-03-22T16:28:58.701Z"
@@ -168,5 +163,10 @@
     "url": "https://nypost.com/2026/03/24/us-news/laguardia-airport-crippled-by-cancellations-delays/",
     "title": "LaGuardia Airport crippled by cancellations, delays after deadly Air Canada crash, partial shutdown",
     "timestamp": "2026-03-24T13:09:31.846Z"
+  },
+  {
+    "url": "https://www.foxnews.com/media/homan-fires-back-booker-after-senator-voices-outrage-over-ice-airport-deployments",
+    "title": "Homan fires back at Booker after senator voices 'outrage' over ICE airport deployments",
+    "timestamp": "2026-03-24T14:56:51.265Z"
   }
 ]
