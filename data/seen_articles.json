@@ -1,15 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/US/record-numbers-tsa-officers-called-saturday-dhs-shutdown/story?id=131307007",
-    "title": " Record numbers of TSA officers called out Saturday as DHS shutdown continues",
-    "timestamp": "2026-03-22T19:24:28.688Z"
-  },
-  {
-    "url": "https://nypost.com/2026/03/22/us-news/insane-lines-at-nyc-airports-spark-3-hour-wait-times-as-shutdown-chaos-sparks-travel-nightmare/",
-    "title": "Insane lines at NYC airports spark 3-hour wait times as shutdown chaos spurs travel nightmare",
-    "timestamp": "2026-03-22T20:26:34.221Z"
-  },
-  {
     "url": "https://www.foxnews.com/media/waltz-says-trump-using-irans-own-oil-strategy-against-drive-down-global-prices",
     "title": "Waltz says Trump is using Iran's own oil strategy against itself to drive down global prices",
     "timestamp": "2026-03-22T21:25:06.114Z"
@@ -168,5 +158,10 @@
     "url": "https://www.foxnews.com/politics/tsa-callouts-hit-houston-atlanta-new-orleans-hardest-450-officers-have-quit-nationwide",
     "title": "TSA callouts hit Houston, Atlanta, New Orleans hardest, 450 officers have quit nationwide",
     "timestamp": "2026-03-24T19:01:32.118Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/24/us-news/laguardia-airport-crash-investigators-offer-new-details-in-air-canada-incident/",
+    "title": "LaGuardia Airport crash investigators reveal confusion, failures before Air Canada jet hit firetruck",
+    "timestamp": "2026-03-24T20:40:10.679Z"
   }
 ]
