@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.nbcnews.com/world/russia/russia-killing-telegram-popular-messaging-app-fears-pushback-rcna263904",
-    "title": "Russia is killing Telegram, its most popular messaging app, despite fears of pushback",
-    "timestamp": "2026-03-22T11:22:21.427Z"
-  },
-  {
     "url": "https://www.foxnews.com/politics/trump-says-ice-deploy-airports-monday-assist-tsa-amid-funding-standoff",
     "title": "Trump says ICE will deploy to airports Monday to assist TSA amid funding standoff",
     "timestamp": "2026-03-22T12:49:25.791Z"
@@ -168,5 +163,10 @@
     "url": "https://abcnews.com/Politics/trump-blocks-asylum-seekers-supreme-court-decide-us/story?id=131189496",
     "title": " As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
     "timestamp": "2026-03-24T10:51:23.587Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/24/us-news/ntsb-chief-investigator-confirms-agency-is-eyeing-multiple-failures-in-deadly-laguardia-crash/",
+    "title": "NTSB chief investigator confirms agency is eyeing ‘multiple failures’ in deadly LaGuardia crash",
+    "timestamp": "2026-03-24T11:43:48.896Z"
   }
 ]
