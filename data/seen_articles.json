@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/US/laguardia-airport-closed-collision-air-canada-plane-airport/story?id=131315551",
-    "title": " LaGuardia Airport closed following collision between Air Canada plane and vehicle",
-    "timestamp": "2026-03-23T07:08:08.142Z"
-  },
-  {
     "url": "https://abcnews.com/International/live-updates/iran-live-updates-trumps-48-hour-deadline-expire/?id=131316431",
     "title": " Iran live updates: Trump's 48-hour deadline to expire Monday evening",
     "timestamp": "2026-03-23T08:54:12.843Z"
@@ -168,5 +163,10 @@
     "url": "https://nypost.com/2026/03/25/us-news/democrat-emily-gregory-flips-long-held-florida-gop-house-seat-that-includes-trumps-mar-a-lago/",
     "title": "Democrat Emily Gregory flips long-held Florida GOP House seat that includes Trump’s Mar-a-Lago",
     "timestamp": "2026-03-25T05:59:46.260Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/25/business/bayesian-superyacht-owner-mike-lynchs-widow-faces-bankruptcy-after-fraud-lawsuit/",
+    "title": "Widow of British billionaire killed in Bayesian superyacht sinking faces bankruptcy after estate ordered to pay $1.2B fraud lawsuit",
+    "timestamp": "2026-03-25T07:14:42.422Z"
   }
 ]
