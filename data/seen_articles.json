@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/23/us-news/video-captures-deadly-laguardia-airport-crash-as-plane-collides-with-fire-truck/",
-    "title": "Harrowing video captures deadly LaGuardia Airport crash as plane collides with fire truck",
-    "timestamp": "2026-03-23T17:03:17.137Z"
-  },
-  {
     "url": "https://pagesix.com/2026/03/23/celebrity-news/perez-hilton-reveals-medical-emergency-that-landed-him-in-hospital/",
     "title": "Perez Hilton reveals medical emergency that landed him in the hospital for 21 days: ‘My body kept falling apart’",
     "timestamp": "2026-03-23T18:53:10.130Z"
@@ -173,5 +168,10 @@
     "url": "https://laopinion.com/2026/03/25/con-ice-trump-prefiere-la-politiqueria-a-las-soluciones-reales/",
     "title": "Con ICE, Trump prefiere la politiquería a las soluciones reales",
     "timestamp": "2026-03-25T16:15:04.220Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/25/business/scotus-sides-with-cox-in-fight-with-record-labels-over-pirated-music/",
+    "title": "Supreme Court sides with internet service provider Cox in fight with record labels over pirated music",
+    "timestamp": "2026-03-25T17:57:43.344Z"
   }
 ]
