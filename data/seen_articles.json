@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/22/us-news/california-man-arrested-in-22-year-old-cold-case-murder/",
-    "title": "Suspect arrested in 22-year-old cold case murder in California",
-    "timestamp": "2026-03-23T05:01:53.907Z"
-  },
-  {
     "url": "https://abcnews.com/US/laguardia-airport-closed-collision-air-canada-plane-airport/story?id=131315551",
     "title": " LaGuardia Airport closed following collision between Air Canada plane and vehicle",
     "timestamp": "2026-03-23T07:08:08.142Z"
@@ -168,5 +163,10 @@
     "url": "https://www.foxnews.com/us/two-arrested-after-us-park-police-officer-shot-apparent-dc-ambush",
     "title": "Two arrested after US Park Police officer shot in apparent DC ambush: report",
     "timestamp": "2026-03-25T04:52:33.200Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/25/us-news/democrat-emily-gregory-flips-long-held-florida-gop-house-seat-that-includes-trumps-mar-a-lago/",
+    "title": "Democrat Emily Gregory flips long-held Florida GOP House seat that includes Trump’s Mar-a-Lago",
+    "timestamp": "2026-03-25T05:59:46.260Z"
   }
 ]
