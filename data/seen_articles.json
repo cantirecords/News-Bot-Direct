@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/sports/syracuse-coach-calls-ncaa-bracket-placement-personal-attack-after-third-straight-tournament-loss-uconn",
-    "title": "Syracuse coach calls NCAA bracket placement a 'personal attack' after third straight tournament loss to UConn",
-    "timestamp": "2026-03-24T09:54:53.741Z"
-  },
-  {
     "url": "https://abcnews.com/Politics/trump-blocks-asylum-seekers-supreme-court-decide-us/story?id=131189496",
     "title": " As Trump blocks asylum seekers, Supreme Court to decide if US must review claims",
     "timestamp": "2026-03-24T10:51:23.587Z"
@@ -163,5 +158,10 @@
     "url": "https://www.foxnews.com/us/gorman-family-calls-out-johnson-pritzker-following-college-students-killing-chicago",
     "title": "Gorman family calls out Johnson and Pritzker following college student's killing in Chicago",
     "timestamp": "2026-03-26T08:54:34.798Z"
+  },
+  {
+    "url": "https://abcnews.com/International/live-updates/iran-live-updates-trumps-48-hour-deadline-expire/?id=131316431",
+    "title": " Iran live updates: Trump says Iran negotiating, claims leaders 'afraid' to be killed",
+    "timestamp": "2026-03-26T10:00:09.679Z"
   }
 ]
