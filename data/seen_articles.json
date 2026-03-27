@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/two-arrested-after-us-park-police-officer-shot-apparent-dc-ambush",
-    "title": "Two arrested after US Park Police officer shot in apparent DC ambush: report",
-    "timestamp": "2026-03-25T04:52:33.200Z"
-  },
-  {
     "url": "https://nypost.com/2026/03/25/us-news/democrat-emily-gregory-flips-long-held-florida-gop-house-seat-that-includes-trumps-mar-a-lago/",
     "title": "Democrat Emily Gregory flips long-held Florida GOP House seat that includes Trump’s Mar-a-Lago",
     "timestamp": "2026-03-25T05:59:46.260Z"
@@ -158,5 +153,10 @@
     "url": "https://abcnews.com/Technology/judge-temporarily-blocks-pentagons-supply-chain-risk-designation/story?id=131453267",
     "title": " Judge temporairly blocks Pentagon's 'supply chain risk' designation for Anthropic",
     "timestamp": "2026-03-27T02:12:12.422Z"
+  },
+  {
+    "url": "https://abcnews.com/Politics/trump-hell-sign-order-directing-dhs-pay-tsa/story?id=131441186",
+    "title": " Trump says he'll sign order directing DHS to pay TSA workers as shutdown drags on",
+    "timestamp": "2026-03-27T05:05:42.347Z"
   }
 ]
