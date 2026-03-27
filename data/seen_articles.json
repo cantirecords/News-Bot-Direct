@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/International/wireStory/uk-police-arrest-2-men-arson-attack-ambulances-131387615",
-    "title": " UK police arrest 2 men over arson attack on ambulances belonging to a Jewish charity",
-    "timestamp": "2026-03-25T09:52:43.968Z"
-  },
-  {
     "url": "https://abcnews.com/International/2-arrested-connection-london-arson-attack-jewish-charitys/story?id=131388332",
     "title": " 2 arrested in connection with London arson attack on Jewish charity's ambulances",
     "timestamp": "2026-03-25T10:47:55.781Z"
@@ -153,5 +148,10 @@
     "url": "https://nypost.com/2026/03/27/us-news/maryland-quadruple-amputee-dayton-james-webber-waives-extradition-hearing-in-murder-charge/",
     "title": "Quadruple amputee cornhole player waives extradition hearing in fatal shooting case",
     "timestamp": "2026-03-27T08:51:47.230Z"
+  },
+  {
+    "url": "https://nypost.com/2026/03/27/us-news/hawaii-helicopter-crash-kills-3-injures-2-off-kauai-coast/",
+    "title": "3 killed, 2 injured in tour helicopter crash on Hawaiian island of Kauai",
+    "timestamp": "2026-03-27T09:53:28.028Z"
   }
 ]
