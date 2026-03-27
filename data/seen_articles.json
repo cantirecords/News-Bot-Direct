@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/03/24/us-news/federal-agents-discover-man-hidden-in-gas-tank-in-smuggling-attempt-at-us-mexico-border/",
-    "title": "Shocking photo shows migrant wedged inside gas tank in human  smuggling attempt at US-Mexico border",
-    "timestamp": "2026-03-25T02:04:56.599Z"
-  },
-  {
     "url": "https://www.foxnews.com/us/two-arrested-after-us-park-police-officer-shot-apparent-dc-ambush",
     "title": "Two arrested after US Park Police officer shot in apparent DC ambush: report",
     "timestamp": "2026-03-25T04:52:33.200Z"
@@ -158,5 +153,10 @@
     "url": "https://www.foxnews.com/politics/trump-declares-national-emergency-airports-sign-order-instructing-dhs-immediately-pay-tsa-agents",
     "title": "Trump declares national emergency at airports, will sign order instructing DHS to 'immediately pay' TSA agents",
     "timestamp": "2026-03-26T23:31:46.038Z"
+  },
+  {
+    "url": "https://abcnews.com/Technology/judge-temporarily-blocks-pentagons-supply-chain-risk-designation/story?id=131453267",
+    "title": " Judge temporairly blocks Pentagon's 'supply chain risk' designation for Anthropic",
+    "timestamp": "2026-03-27T02:12:12.422Z"
   }
 ]
