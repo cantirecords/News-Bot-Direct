@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/International/2-arrested-connection-london-arson-attack-jewish-charitys/story?id=131388332",
-    "title": " 2 arrested in connection with London arson attack on Jewish charity's ambulances",
-    "timestamp": "2026-03-25T10:47:55.781Z"
-  },
-  {
     "url": "https://www.foxnews.com/politics/retiring-border-patrol-chief-bovino-says-he-wishes-he-caught-even-more-illegals",
     "title": "Retiring Border Patrol Chief Bovino says he wishes he ‘caught even more’ illegals",
     "timestamp": "2026-03-25T11:40:41.196Z"
@@ -153,5 +148,10 @@
     "url": "https://nypost.com/2026/03/27/us-news/hawaii-helicopter-crash-kills-3-injures-2-off-kauai-coast/",
     "title": "3 killed, 2 injured in tour helicopter crash on Hawaiian island of Kauai",
     "timestamp": "2026-03-27T09:53:28.028Z"
+  },
+  {
+    "url": "https://www.foxnews.com/politics/ted-cruz-unleashes-dems-are-risking-american-lives-dhs-shutdown",
+    "title": "Ted Cruz unleashes on Dems for risking American lives with DHS shutdown: 'Radical open-border base'",
+    "timestamp": "2026-03-27T10:48:00.736Z"
   }
 ]
