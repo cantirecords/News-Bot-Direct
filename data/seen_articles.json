@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.nbcnews.com/business/markets/oil-prices-stocks-trump-iran-ceasefire-rcna267182",
-    "title": "Oil prices plunge 15%, stock futures rally after Trump announces ceasefire",
-    "timestamp": "2026-04-08T10:14:36.405Z"
-  },
-  {
     "url": "https://nypost.com/video/president-trump-announces-ceasefire-in-iran-tucker-carlson-feud-could-spell-trouble-for-gop/",
     "title": "President Trump announces ceasefire in Iran, Tucker Carlson feud could spell trouble for GOP",
     "timestamp": "2026-04-08T11:54:08.520Z"
@@ -138,5 +133,10 @@
     "url": "https://nypost.com/2026/04/10/us-news/husband-of-missing-us-woman-lynette-hooker-texted-with-pal-over-apparent-bahamas-overboard-blamed-weather-for-failed-rescue-before-his-arrest/",
     "title": "Husband of missing US woman Lynette Hooker texted pal over apparent Bahamas overboard, blamed wind for failed rescue before his arrest: report",
     "timestamp": "2026-04-10T09:07:41.959Z"
+  },
+  {
+    "url": "https://www.foxnews.com/politics/hormuz-choke-point-persists-iran-halts-oil-traffic-despite-trump-ceasefire",
+    "title": "Hormuz choke point persists as Iran halts oil traffic despite Trump ceasefire",
+    "timestamp": "2026-04-10T10:52:57.749Z"
   }
 ]
