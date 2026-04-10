@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/video/president-trump-announces-ceasefire-in-iran-tucker-carlson-feud-could-spell-trouble-for-gop/",
-    "title": "President Trump announces ceasefire in Iran, Tucker Carlson feud could spell trouble for GOP",
-    "timestamp": "2026-04-08T11:54:08.520Z"
-  },
-  {
     "url": "https://abcnews.com/US/gilgo-beach-serial-killer-suspect-rex-heuermann-returning/story?id=131759998",
     "title": " Gilgo Beach suspect returning to court, may admit to crimes: Sources",
     "timestamp": "2026-04-08T13:17:52.545Z"
@@ -143,5 +138,10 @@
     "url": "https://nypost.com/2026/04/10/opinion/hungarys-two-faced-orban-deserves-to-lose-re-election-bid/",
     "title": "Why Hungary’s two-faced Orbán deserves to lose his re-election bid",
     "timestamp": "2026-04-10T11:47:24.521Z"
+  },
+  {
+    "url": "https://www.nbcnews.com/business/economy/march-inflation-report-iran-war-gas-prices-rcna267535",
+    "title": "Consumer prices jumped 0.9% in March as Iran war sent gas prices soaring",
+    "timestamp": "2026-04-10T13:07:20.191Z"
   }
 ]
