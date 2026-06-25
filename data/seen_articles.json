@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/voting-gets-underway-key-primary-elections-across-four-states-more-top-headlines",
-    "title": "Voting gets underway for key primary elections across four states and more top headlines",
-    "timestamp": "2026-06-23T12:05:24.280Z"
-  },
-  {
     "url": "https://nypost.com/2026/06/23/us-news/immigration-case-dealing-with-green-card-holders-supreme-courts-sides-with-trump-administration/",
     "title": "Supreme Court sides with Trump admin in green card holders immigration case",
     "timestamp": "2026-06-23T15:46:15.668Z"
@@ -23,5 +18,10 @@
     "url": "https://nypost.com/2026/06/24/business/iran-oman-will-start-large-scale-evacuation-of-ships-through-strait-of-hormuz-says-imo/",
     "title": "Iran, Oman will start large-scale evacuation of ships through Strait of Hormuz, says IMO",
     "timestamp": "2026-06-24T16:20:07.122Z"
+  },
+  {
+    "url": "https://www.foxnews.com/us/senate-republicans-flip-iran-war-powers-vote-after-fiery-meeting-trump-more-top-headlines",
+    "title": "Senate Republicans flip on Iran war powers vote after fiery meeting with Trump and more top headlines",
+    "timestamp": "2026-06-25T12:18:06.258Z"
   }
 ]
