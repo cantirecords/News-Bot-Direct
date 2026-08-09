@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/08/07/us-news/ny-police-seeking-homicide-armed-and-dangerous-suspect/",
-    "title": "NY police launch manhunt for ‘armed and dangerous’ homicide, house fire suspect",
-    "timestamp": "2026-08-07T18:53:00.907Z"
-  },
-  {
     "url": "https://abcnews.com/International/6-people-killed-dozen-injured-thailand-school-shooting/story?id=135447961",
     "title": " Thailand school gunman kills grandparents, 3 teachers before shooting himself: Police",
     "timestamp": "2026-08-07T20:37:52.931Z"
@@ -43,5 +38,10 @@
     "url": "https://abcnews.com/International/wireStory/alleged-irish-organized-crime-boss-daniel-kinahan-extradited-135497071",
     "title": " Suspected Irish crime boss lands in Dublin after being extradited",
     "timestamp": "2026-08-09T18:37:06.825Z"
+  },
+  {
+    "url": "https://nypost.com/2026/08/09/us-news/norad-intercepts-planes-violating-airspace-near-trumps-golf-club-in-bedminster/",
+    "title": "NORAD intercepts planes violating airspace near Trump’s golf club in Bedminster",
+    "timestamp": "2026-08-09T19:31:22.690Z"
   }
 ]
