@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/09/05/world-news/greek-f-4-phantom-crashes-during-airshow-killing-two-pilots/",
-    "title": "F-4 Phantom crashes in fiery Greek airshow disaster, killing 2 pilots",
-    "timestamp": "2026-09-05T16:31:59.019Z"
-  },
-  {
     "url": "https://nypost.com/2026/09/05/us-news/fresno-planes-crash-leaves-several-dead-and-injured/",
     "title": "2 killed in fiery California plane crash",
     "timestamp": "2026-09-06T00:34:02.014Z"
@@ -58,5 +53,10 @@
     "url": "https://nypost.com/2026/09/07/sports/bears-super-bowl-champ-matt-suhey-dead-at-68/",
     "title": "Bears Super Bowl champ Matt Suhey dead at 68",
     "timestamp": "2026-09-07T14:46:59.986Z"
+  },
+  {
+    "url": "https://www.foxnews.com/entertainment/king-charles-iii-clarifies-prince-harry-meghan-markle-not-resume-royal-duties-after-uk-move",
+    "title": "King Charles III clarifies Prince Harry and Meghan Markle will not resume royal duties after UK move",
+    "timestamp": "2026-09-07T18:59:03.247Z"
   }
 ]
