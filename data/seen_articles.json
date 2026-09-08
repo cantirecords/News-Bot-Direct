@@ -1,15 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/politics/trump-admin-mail-ballot-fight-lands-back-supreme-court",
-    "title": "Trump admin’s mail-in ballot fight lands back at Supreme Court",
-    "timestamp": "2026-09-06T18:49:55.913Z"
-  },
-  {
-    "url": "https://abcnews.com/US/cargo-plane-overruns-runway-miami-international-airport-faa/story?id=136242081",
-    "title": " Amazon cargo plane overruns runway at Miami International Airport",
-    "timestamp": "2026-09-06T21:02:03.551Z"
-  },
-  {
     "url": "https://nypost.com/2026/09/06/us-news/california-flight-instructor-danna-eady-and-two-sons-killed-in-fresno-plane-crash/",
     "title": "California flight instructor Danna Eady and two sons killed in Fresno plane crash",
     "timestamp": "2026-09-06T23:28:43.614Z"
@@ -43,5 +33,10 @@
     "url": "https://abcnews.com/US/smithsonian-secretary-lonnie-bunch-resigns-amid-attacks-trump/story?id=136278030",
     "title": " Smithsonian Secretary Lonnie Bunch resigns amid attacks from Trump administration",
     "timestamp": "2026-09-08T18:18:19.754Z"
+  },
+  {
+    "url": "https://www.nbcnews.com/world/iran/us-strikes-iranian-tankers-attempted-missile-attacks-navy-warship-rcna596699",
+    "title": "U.S. strikes Iranian tankers after attempted attacks on Navy warship",
+    "timestamp": "2026-09-08T21:33:38.707Z"
   }
 ]
