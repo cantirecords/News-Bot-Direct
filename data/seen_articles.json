@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/09/07/us-news/us-restricts-government-travel-to-mexican-border-city-over-threat-concerns/",
-    "title": "US restricts government travel to Mexican border city over threat concerns",
-    "timestamp": "2026-09-07T08:01:42.779Z"
-  },
-  {
     "url": "https://nypost.com/2026/09/07/sports/bears-super-bowl-champ-matt-suhey-dead-at-68/",
     "title": "Bears Super Bowl champ Matt Suhey dead at 68",
     "timestamp": "2026-09-07T14:46:59.986Z"
@@ -38,5 +33,10 @@
     "url": "https://www.foxnews.com/outkick-sports/aaron-judge-held-hitless-long-awaited-return-new-york-yankees-lineup-rib-fracture",
     "title": "Aaron Judge held hitless in long-awaited return to New York Yankees lineup from rib fracture",
     "timestamp": "2026-09-09T03:08:19.866Z"
+  },
+  {
+    "url": "https://abcnews.com/US/ntsb-release-readout-cockpit-voice-recorder-amazon-cargo/story?id=136292103",
+    "title": " NTSB to release readout from cockpit recorder after deadly Amazon cargo plane crash",
+    "timestamp": "2026-09-09T08:37:37.350Z"
   }
 ]
