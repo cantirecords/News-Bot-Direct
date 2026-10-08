@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/media/border-czar-tom-homan-clashes-cbs-interviewer-over-migrant-deaths-asks-biden-era-data",
-    "title": "Border czar Tom Homan clashes with CBS interviewer over migrant deaths, asks for Biden-era data",
-    "timestamp": "2026-10-05T23:44:53.604Z"
-  },
-  {
     "url": "https://nypost.com/2026/10/06/us-news/death-row-inmate-spared-after-botched-christa-pike-execution-killed-pal-moments-after-bailing-him-out/",
     "title": "Death row inmate spared after botched Christa Pike execution killed pal moments after bailing him out",
     "timestamp": "2026-10-06T04:55:39.662Z"
@@ -43,5 +38,10 @@
     "url": "https://nypost.com/2026/10/07/us-news/two-dead-after-plane-crashes-near-petaluma-golf-course/",
     "title": "2 people confirmed dead after fiery plane crash in California’s Wine Country",
     "timestamp": "2026-10-07T22:43:06.764Z"
+  },
+  {
+    "url": "https://nypost.com/2026/10/07/sports/roger-clemens-will-recieve-the-presidential-medal-of-freedom/",
+    "title": "Trump reveals Roger Clemens will receive the Presidential Medal of Freedom",
+    "timestamp": "2026-10-08T02:30:37.509Z"
   }
 ]
