@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://nypost.com/2026/10/07/us-news/two-dead-after-plane-crashes-near-petaluma-golf-course/",
-    "title": "2 people confirmed dead after fiery plane crash in California’s Wine Country",
-    "timestamp": "2026-10-07T22:43:06.764Z"
-  },
-  {
     "url": "https://nypost.com/2026/10/07/sports/roger-clemens-will-recieve-the-presidential-medal-of-freedom/",
     "title": "Trump reveals Roger Clemens will receive the Presidential Medal of Freedom",
     "timestamp": "2026-10-08T02:30:37.509Z"
@@ -43,5 +38,10 @@
     "url": "https://www.nbcnews.com/business/energy/trump-putin-diesel-prices-rcna602566",
     "title": "Trump eases Russia sanctions, says Putin will release diesel amid massive price spike",
     "timestamp": "2026-10-09T22:15:54.033Z"
+  },
+  {
+    "url": "https://nypost.com/2026/10/09/us-news/trump-goes-off-on-norway-for-awarding-nobel-peace-prize-to-mystery-woman-claims-he-deserves-eight-medals/",
+    "title": "Trump goes off on Norway for awarding Nobel Peace Prize to ‘mystery woman’ — claims he deserves ‘eight’ medals",
+    "timestamp": "2026-10-10T02:04:37.525Z"
   }
 ]
