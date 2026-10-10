@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.cnn.com/business/live-news/fox-news-dominion-trial-04-18-23/h_8d51e3ae2714edaa0dace837305d03b8",
-    "title": "Dominion still has pending lawsuits against election deniers such as Rudy Giuliani and Sidney Powell",
-    "timestamp": "2026-10-08T09:59:54.435Z"
-  },
-  {
     "url": "https://www.foxnews.com/us/armed-man-shot-dead-attempted-attack-inside-nashville-federal-courthouse-police-say",
     "title": "Armed man shot dead after attempted attack inside Nashville federal courthouse, police say",
     "timestamp": "2026-10-08T17:20:30.136Z"
@@ -43,5 +38,10 @@
     "url": "https://abcnews.com/US/live-updates/hurricane-isaias-updates-isaias-strengthens-category-3/?id=137128637",
     "title": " Hurricane Isaias updates: Storm makes landfall in Florida Panhandle",
     "timestamp": "2026-10-10T09:24:34.914Z"
+  },
+  {
+    "url": "https://nypost.com/2026/10/10/us-news/christa-pike-discharged-from-hospital-after-botched-execution-lawyers/",
+    "title": "Christa Pike discharged from hospital after botched execution: lawyers",
+    "timestamp": "2026-10-10T15:42:12.418Z"
   }
 ]
