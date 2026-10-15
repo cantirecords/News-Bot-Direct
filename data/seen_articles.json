@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/US/1-dead-injured-roller-coaster-incident-flags-georgia/story?id=137208656",
-    "title": " 1 dead, several injured in roller coaster incident at Six Flags park: Police",
-    "timestamp": "2026-10-13T00:08:52.074Z"
-  },
-  {
     "url": "https://nypost.com/2026/10/13/us-news/delta-flight-arriving-from-ny-evacuated-after-landing-in-tel-aviv-over-bomb-threat-reports/",
     "title": "Delta flight arriving from NY evacuated over bomb threat after landing in Tel Aviv: reports",
     "timestamp": "2026-10-13T07:21:23.896Z"
@@ -48,5 +43,10 @@
     "url": "https://nypost.com/2026/10/14/us-news/rape-reported-at-university-of-chicago-frat-party-as-bros-cheered-on-attack-asked-whens-my-turn-witness/",
     "title": "Rape reported at another elite college’s frat party — as bros cheered on attack, asked ‘when’s my turn’: witness",
     "timestamp": "2026-10-14T23:40:55.341Z"
+  },
+  {
+    "url": "https://nypost.com/2026/10/14/media/rogan-says-trump-voters-feel-betrayed-after-iran-war-got-really-out-of-hand/",
+    "title": "Rogan says Trump voters feel betrayed after Iran war got ‘really out of hand’ in split from prez",
+    "timestamp": "2026-10-15T03:14:49.096Z"
   }
 ]
