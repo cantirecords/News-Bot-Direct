@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://abcnews.com/Business/wireStory/investigators-recover-voice-recorder-jet-crash-florida-killed-137995963",
-    "title": " Investigators recover the voice recorder from a jet crash in Florida that killed 9",
-    "timestamp": "2026-11-10T03:09:07.606Z"
-  },
-  {
     "url": "https://nypost.com/2026/11/10/us-news/fbi-is-looking-into-nvidia-boss-jensen-huangs-affair-with-suspected-chinese-spy-trump-says/",
     "title": "FBI is ‘looking into’ Nvidia boss Jensen Huang’s affair with suspected Chinese spy, Trump says",
     "timestamp": "2026-11-10T12:05:26.937Z"
@@ -33,5 +28,10 @@
     "url": "https://www.foxnews.com/us/two-pulled-from-rubble-after-nyc-building-collapses-search-underway-others-feared-trapped-fdny",
     "title": "Two pulled from rubble after NYC building collapses, search underway for others feared trapped: FDNY",
     "timestamp": "2026-11-11T22:28:14.417Z"
+  },
+  {
+    "url": "https://abcnews.com/US/nvidia-board-reportedly-preparing-oust-ceo-jensen-huang/story?id=138062059",
+    "title": " Nvidia board reportedly preparing to oust CEO Jensen Huang after alleged affairs",
+    "timestamp": "2026-11-12T03:35:40.960Z"
   }
 ]
