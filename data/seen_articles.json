@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://www.foxnews.com/us/two-pulled-from-rubble-after-nyc-building-collapses-search-underway-others-feared-trapped-fdny",
-    "title": "Two pulled from rubble after NYC building collapses, search underway for others feared trapped: FDNY",
-    "timestamp": "2026-11-11T22:28:14.417Z"
-  },
-  {
     "url": "https://abcnews.com/US/nvidia-board-reportedly-preparing-oust-ceo-jensen-huang/story?id=138062059",
     "title": " Nvidia board reportedly preparing to oust CEO Jensen Huang after alleged affairs",
     "timestamp": "2026-11-12T03:35:40.960Z"
@@ -33,5 +28,10 @@
     "url": "https://nypost.com/2026/11/13/world-news/bus-collision-in-indias-assam-kills-at-least-24-people/",
     "title": "Bus collision in India kills at least 24 people in tragic accident",
     "timestamp": "2026-11-13T17:29:45.167Z"
+  },
+  {
+    "url": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+    "title": " FAA issues rare nationwide ground stop; no indication of 'nefarious attack'",
+    "timestamp": "2026-11-13T23:14:56.054Z"
   }
 ]
